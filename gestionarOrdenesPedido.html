@@ -55,7 +55,7 @@
               <a class="nav-link" href="gestionarBoleta.html"> Gestionar Boletas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gestionarOrdenesPedido.html">Gestionar Empleados</a>
+              <a class="nav-link" href="index.html">Gestionar Empleados</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="gestionarServicios.html">Gestionar Servicios</a>
@@ -82,7 +82,7 @@
     <div class="container">
         <div class="container-xl">
             <div class="col-sm-6">
-                <h2>Administración de Servicios</h2>
+                <h2>Administración de Boletas</h2>
                 <br>
             </div>
         </div>
@@ -90,7 +90,7 @@
         <div class="container">
             <form>
                 <div class="row">
-                    <input type="search" class="col-lg-2 offset-9" placeholder="ID del servicio">
+                    <input type="search" class="col-lg-2 offset-9" placeholder="N° de la orden">
                     <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
                         <i class="fa fa-search" aria-hidden="true"></i>
                     </button>
@@ -101,12 +101,14 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th style="text-align: center;">N° Servicio</th>
-                <th style="text-align: center;">Nombre Servicio</th>
-                <th style="text-align: center;">Precio Servicio</th>
-                <th style="text-align: center;">Tipo de Servicio</th>
-                <th style="text-align: center;">Descripción Servicio</th>
-                <th style="text-align: center;">Producto Asociado</th>
+                <th style="text-align: center;">N° Orden</th>
+                <th style="text-align: center;">Fecha</th>
+                <th style="text-align: center;">Precio Producto</th>
+                <th style="text-align: center;">Cantidad producto</th>
+                <th style="text-align: center;">Producto</th>
+                <th style="text-align: center;">Precio Total</th>
+                <th style="text-align: center;">Proveedor</th>
+                <th style="text-align: center;">Estado</th>
                 <th style="text-align: center;">Acciones</th>
                 </tr>
             </thead>
@@ -114,50 +116,58 @@
                 <!-- Inicio Boleta -->
                 <tr style="vertical-align: middle;">
                     <td style="text-align: center;">#1</td>
-                    <td style="text-align: center;">Limpieza de Autos</td>
-                    <td style="text-align: center;">$10.000</td>
-                    <td style="text-align: center;">Limpieza</td>
-                    <td style="text-align: center;">Limpieza del auto del cliente</td>
-                    <td style="text-align: center;">Silicona de Auto</td> 
+                    <td style="text-align: center;">15/11/2022</td>
+                    <td style="text-align: center;">$1.000</td>
+                    <td style="text-align: center;">5</td>
+                    <td style="text-align: center;">Aceite</td>
+                    <td style="text-align: center;">$5.000</td>
+                    <td style="text-align: center;">Toyota</td> 
+                    <td style="text-align: center;">Entregado</td> 
                     <td style="text-align: center;">
-                        <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                        <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
+                        <a href="gestionarOrdenesPedido.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarOrdenesPedido.html" class="btn btn-link">Eliminar</button>
                     </td>
                 </tr>
                 <tr style="vertical-align: middle;">
                   <td style="text-align: center;">#1</td>
-                  <td style="text-align: center;">Limpieza de Autos</td>
-                  <td style="text-align: center;">$10.000</td>
-                  <td style="text-align: center;">Limpieza</td>
-                  <td style="text-align: center;">Limpieza del auto del cliente</td>
-                  <td style="text-align: center;">Silicona de Auto</td> 
+                  <td style="text-align: center;">15/11/2022</td>
+                  <td style="text-align: center;">$15.000</td>
+                  <td style="text-align: center;">5</td>
+                  <td style="text-align: center;">Motor</td>
+                  <td style="text-align: center;">$75.000</td>
+                  <td style="text-align: center;">Chevrolet</td> 
+                  <td style="text-align: center;">Pedido</td> 
                   <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
+                      <a href="gestionarOrdenesPedido.html" class="btn btn-link">Editar</button>
+                      <a href="gestionarOrdenesPedido.html" class="btn btn-link">Eliminar</button>
                   </td>
                 </tr>
                 <tr style="vertical-align: middle;">
                   <td style="text-align: center;">#1</td>
-                  <td style="text-align: center;">Limpieza de Autos</td>
+                  <td style="text-align: center;">15/11/2022</td>
                   <td style="text-align: center;">$10.000</td>
-                  <td style="text-align: center;">Limpieza</td>
-                  <td style="text-align: center;">Limpieza del auto del cliente</td>
-                  <td style="text-align: center;">Silicona de Auto</td> 
+                  <td style="text-align: center;">2</td>
+                  <td style="text-align: center;">Frenos</td>
+                  <td style="text-align: center;">$20.000</td>
+                  <td style="text-align: center;">Chevrolet</td> 
+                  <td style="text-align: center;">Pedido</td> 
                   <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
+                      <a href="gestionarOrdenesPedido.html" class="btn btn-link">Editar</button>
+                      <a href="gestionarOrdenesPedido.html" class="btn btn-link">Eliminar</button>
                   </td>
                 </tr>
                 <tr style="vertical-align: middle;">
                   <td style="text-align: center;">#1</td>
-                  <td style="text-align: center;">Limpieza de Autos</td>
-                  <td style="text-align: center;">$10.000</td>
-                  <td style="text-align: center;">Limpieza</td>
-                  <td style="text-align: center;">Limpieza del auto del cliente</td>
-                  <td style="text-align: center;">Silicona de Auto</td> 
+                  <td style="text-align: center;">15/11/2022</td>
+                  <td style="text-align: center;">$4.000</td>
+                  <td style="text-align: center;">10</td>
+                  <td style="text-align: center;">Silicona de Autos</th>
+                  <td style="text-align: center;">$40.000</td>
+                  <td style="text-align: center;">Toyota</td> 
+                  <td style="text-align: center;">Entregado</td> 
                   <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
+                      <a href="gestionarOrdenesPedido.html" class="btn btn-link">Editar</button>
+                      <a href="gestionarOrdenesPedido.html" class="btn btn-link">Eliminar</button>
                   </td>
                 </tr>
                 <!-- Fin Boleta -->
