@@ -61,11 +61,11 @@
               <a class="nav-link" href="gestionarServicios.html">Gestionar <br> Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gestionarEmpleado.html">Gestionar <br> Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="gestionarProveedores.html">Gestionar <br> Proveedores</a>
-            </li>
+                <a class="nav-link" href="gestionarEmpleado.html">Gestionar <br> Empleados</a>
+              </li>
+              <li class="nav-item">
+                  <a class="nav-link" href="gestionarProveedores.html">Gestionar <br> Proveedores</a>
+              </li>
             <li class="nav-item active">
               <a class="nav-link" href="index.html">Mi Perfil <span class="sr-only">(current)</span> </a>
             </li>
@@ -81,7 +81,7 @@
     <div class="container">
         <div class="container-xl">
             <div class="col-sm-6">
-                <h2>Administración de Servicios</h2>
+                <h2>Administración de Empleados</h2>
                 <br>
             </div>
         </div>
@@ -89,13 +89,13 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
-              <a class="nav-link" href="gestionarServicios.html">
-                <button class="btn btn-success">Agregar Servicio</button>
+              <a class="nav-link" href="gestionarEmpleado.html">
+                <button class="btn btn-success">Agregar Empleado</button>
               </a>
             </div>
             <div class="col-lg-4 offset-5">
               <form>
-                <input type="search"  placeholder="N° del servicio" class="col-lg-8">
+                <input type="search"  placeholder="RUN del Empleado sin DV" class="col-lg-8">
                 <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
@@ -108,64 +108,34 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th style="text-align: center;" class="col-lg-1">N° Servicio</th>
-                <th style="text-align: center;" class="col-lg-2">Nombre Servicio</th>
-                <th style="text-align: center;" class="col-lg-1">Precio Servicio</th>
-                <th style="text-align: center;" class="col-lg-1">Tipo de Servicio</th>
-                <th style="text-align: center;" class="col-lg-3">Descripción Servicio</th>
-                <th style="text-align: center;" class="col-lg-2">Producto Asociado</th>
-                <th style="text-align: center;" class="col-lg-2">Acciones</th>
+                <th style="text-align: center;" class="col-lg-2">RUN Empleado</th>
+                <th style="text-align: center;" class="col-lg-1">Nombre Empleado</th>
+                <th style="text-align: center;" class="col-lg-1">Edad Empleado</th>
+                <th style="text-align: center;" class="col-lg-1">Telefono Empleado</th>
+                <th style="text-align: center;" class="col-lg-1">Correo Empleado</th>
+                <th style="text-align: center;" class="col-lg-1">Dirección</th>
+                <th style="text-align: center;" class="col-lg-1">Fecha Inicio Contrato</th>
+                <th style="text-align: center;" class="col-lg-1">Sueldo</th>
+                <th style="text-align: center;" class="col-lg-1">Tipo de Empleado</th>
+                <th style="text-align: center;" class="col-lg-1">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Inicio Boleta -->
                 <tr style="vertical-align: middle;">
-                    <td style="text-align: center;">#1</td>
-                    <td style="text-align: center;">Limpieza de Autos</td>
-                    <td style="text-align: center;">$8.000</td>
-                    <td style="text-align: center;">Limpieza</td>
-                    <td style="text-align: center;">Limpieza del auto del cliente</td>
-                    <td style="text-align: center;">Silicona de Auto</td> 
+                    <td style="text-align: center;">11.686.945-6</td>
+                    <td style="text-align: center;">Pedro Arancibia</td>
+                    <td style="text-align: center;">45</td>
+                    <td style="text-align: center;">+56965894561</td>
+                    <td style="text-align: center;">Pe.arab@Serviexpress.cl</td>
+                    <td style="text-align: center;">Pasaje Los Beduinos, 1365</td> 
+                    <td style="text-align: center;">15/03/2022</td>
+                    <td style="text-align: center;">$650.000</td>
+                    <td style="text-align: center;">Mecánico</td>
                     <td style="text-align: center;">
-                        <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                        <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
+                        <a href="gestionarEmpleado.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarEmpleado.html" class="btn btn-link">Eliminar</button>
                     </td>
-                </tr>
-                <tr style="vertical-align: middle;">
-                  <td style="text-align: center;">#2</td>
-                  <td style="text-align: center;">Chequeo de vehiculo</td>
-                  <td style="text-align: center;">$10.000</td>
-                  <td style="text-align: center;">Inspeccíon</td>
-                  <td style="text-align: center;">Chequear el vehiculo del cliente en busca de problemas a arreglar</td>
-                  <td style="text-align: center;">N/A</td> 
-                  <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
-                  </td>
-                </tr>
-                <tr style="vertical-align: middle;">
-                  <td style="text-align: center;">#3</td>
-                  <td style="text-align: center;">Reparación de pastillas de freno</td>
-                  <td style="text-align: center;">$20.000</td>
-                  <td style="text-align: center;">Reparación</td>
-                  <td style="text-align: center;">Se arreglarán las pastillas de freno del vehiculo sin necesidad de realizar un cambio</td>
-                  <td style="text-align: center;">N/A</td> 
-                  <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
-                  </td>
-                </tr>
-                <tr style="vertical-align: middle;">
-                  <td style="text-align: center;">#4</td>
-                  <td style="text-align: center;">Cambio de Neumaticos</td>
-                  <td style="text-align: center;">$40.000</td>
-                  <td style="text-align: center;">Reparación</td>
-                  <td style="text-align: center;">Se cambiarán los neumaticos del vehiculo</td>
-                  <td style="text-align: center;">Neumáticos</td> 
-                  <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
-                  </td>
                 </tr>
                 <!-- Fin Boleta -->
             </tbody>

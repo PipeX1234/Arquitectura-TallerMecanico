@@ -52,25 +52,24 @@
               <a class="nav-link" href="index.html">Inicio </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gestionarBoleta.html"> Gestionar Boletas</a>
+              <a class="nav-link" href="gestionarBoleta.html"> Gestionar <br> Boletas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gestionarOrdenesPedido.html">Gestionar Empleados</a>
+              <a class="nav-link" href="gestionarOrdenesPedido.html">Gestionar Ordenes <br> De Pedido</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="gestionarServicios.html">Gestionar Servicios</a>
+              <a class="nav-link" href="gestionarServicios.html">Gestionar <br> Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gestionarEmpleado.html">Gestionar <br> Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gestionarProveedores.html">Gestionar <br> Proveedores</a>
             </li>
             <li class="nav-item active">
-              <a class="nav-link" href="indedx.html">Mi Perfil <span class="sr-only">(current)</span> </a>
+              <a class="nav-link" href="index.html">Mi Perfil <span class="sr-only">(current)</span> </a>
             </li>
           </ul>
-          <div class="quote_btn-container">
-            <form class="form-inline">
-              <button class="btn   nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-          </div>
         </div>
       </nav>
     </div>
@@ -88,14 +87,21 @@
         </div>
 
         <div class="container">
-            <form>
-                <div class="row">
-                    <input type="search" class="col-lg-2 offset-9" placeholder="ID de la Boleta">
-                    <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                </div>
-            </form>
+          <div class="row">
+            <div class="col-lg-3">
+              <a class="nav-link" href="gestionarBoleta.html">
+                <button class="btn btn-success">Agregar Boleta</button>
+              </a>
+            </div>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="N° de la Boleta" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
         <br>
         <table class="table table-hover">

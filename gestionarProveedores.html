@@ -81,7 +81,7 @@
     <div class="container">
         <div class="container-xl">
             <div class="col-sm-6">
-                <h2>Administración de Servicios</h2>
+                <h2>Administración de Proveedores</h2>
                 <br>
             </div>
         </div>
@@ -89,13 +89,13 @@
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
-              <a class="nav-link" href="gestionarServicios.html">
-                <button class="btn btn-success">Agregar Servicio</button>
+              <a class="nav-link" href="gestionarProveedores.html">
+                <button class="btn btn-success">Agregar Proveedor</button>
               </a>
             </div>
             <div class="col-lg-4 offset-5">
               <form>
-                <input type="search"  placeholder="N° del servicio" class="col-lg-8">
+                <input type="search"  placeholder="N° del pedido" class="col-lg-8">
                 <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
                     <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
@@ -108,64 +108,26 @@
         <table class="table table-hover">
             <thead>
                 <tr>
-                <th style="text-align: center;" class="col-lg-1">N° Servicio</th>
-                <th style="text-align: center;" class="col-lg-2">Nombre Servicio</th>
-                <th style="text-align: center;" class="col-lg-1">Precio Servicio</th>
-                <th style="text-align: center;" class="col-lg-1">Tipo de Servicio</th>
-                <th style="text-align: center;" class="col-lg-3">Descripción Servicio</th>
-                <th style="text-align: center;" class="col-lg-2">Producto Asociado</th>
+                <th style="text-align: center;" class="col-lg-1">ID proveedor</th>
+                <th style="text-align: center;" class="col-lg-2">Nombre Proveedor</th>
+                <th style="text-align: center;" class="col-lg-2">Correo Electrónico</th>
+                <th style="text-align: center;" class="col-lg-2">Telefono Proveedor</th>
+                <th style="text-align: center;" class="col-lg-3">Sucursal Proveedor</th>
                 <th style="text-align: center;" class="col-lg-2">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 <!-- Inicio Boleta -->
                 <tr style="vertical-align: middle;">
-                    <td style="text-align: center;">#1</td>
-                    <td style="text-align: center;">Limpieza de Autos</td>
-                    <td style="text-align: center;">$8.000</td>
-                    <td style="text-align: center;">Limpieza</td>
-                    <td style="text-align: center;">Limpieza del auto del cliente</td>
-                    <td style="text-align: center;">Silicona de Auto</td> 
+                    <td style="text-align: center;"># 1</td>
+                    <td style="text-align: center;">Toyota</td>
+                    <td style="text-align: center;">proveedor@toyota.cl</td>
+                    <td style="text-align: center;">9 56915689</td>
+                    <td style="text-align: center;">Región Metropolitana, Maipú</td>
                     <td style="text-align: center;">
-                        <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                        <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
+                        <a href="gestionarProveedores.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarProveedores.html" class="btn btn-link">Eliminar</button>
                     </td>
-                </tr>
-                <tr style="vertical-align: middle;">
-                  <td style="text-align: center;">#2</td>
-                  <td style="text-align: center;">Chequeo de vehiculo</td>
-                  <td style="text-align: center;">$10.000</td>
-                  <td style="text-align: center;">Inspeccíon</td>
-                  <td style="text-align: center;">Chequear el vehiculo del cliente en busca de problemas a arreglar</td>
-                  <td style="text-align: center;">N/A</td> 
-                  <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
-                  </td>
-                </tr>
-                <tr style="vertical-align: middle;">
-                  <td style="text-align: center;">#3</td>
-                  <td style="text-align: center;">Reparación de pastillas de freno</td>
-                  <td style="text-align: center;">$20.000</td>
-                  <td style="text-align: center;">Reparación</td>
-                  <td style="text-align: center;">Se arreglarán las pastillas de freno del vehiculo sin necesidad de realizar un cambio</td>
-                  <td style="text-align: center;">N/A</td> 
-                  <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
-                  </td>
-                </tr>
-                <tr style="vertical-align: middle;">
-                  <td style="text-align: center;">#4</td>
-                  <td style="text-align: center;">Cambio de Neumaticos</td>
-                  <td style="text-align: center;">$40.000</td>
-                  <td style="text-align: center;">Reparación</td>
-                  <td style="text-align: center;">Se cambiarán los neumaticos del vehiculo</td>
-                  <td style="text-align: center;">Neumáticos</td> 
-                  <td style="text-align: center;">
-                      <a href="gestionarServicios.html" class="btn btn-link">Editar</button>
-                      <a href="gestionarServicios.html" class="btn btn-link">Eliminar</button>
-                  </td>
                 </tr>
                 <!-- Fin Boleta -->
             </tbody>
