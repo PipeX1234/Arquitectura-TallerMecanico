@@ -80,17 +80,99 @@
   <!--  Sección de tabla inicio -->
     <div class="container">
         <div class="container-xl">
-            <div class="col-sm-6">
+            <div class="col-lg-6">
                 <h2>Administración de Ordenes de Pedido</h2>
                 <br>
             </div>
         </div>
+        
+        <!-- Inicio Formulario Orden de pedido -->
+        <div class="container">
+          <div class="col-lg-8 offset-2">
+            <!--  -->
+            <form id="OrdenPedido" method="POST" action="">
+              <div class="form-group">
+                <div class="card">
+                  <div class="col-lg-12" style="padding: 20px;">
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="productoPedido">Producto</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="productoPedido" id="productoPedido" style="width: 44%;">
+                          <option value="1">Aceite</option>
+                          <option value="2">Silicona</option>
+                          <option value="3">Frenos</option>
+                          <option value="4">Motor</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">Precio</p> </div>
+                      <div class="col-lg-8">
+                        <input type="text" value="$10.000" readonly/>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">Stock en Bodega</p> </div>
+                      <div class="col-lg-8">
+                        <input type="text" name="txtId" id="txtId" value="0" readonly />
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">Cantidad a pedir</p> </div>
+                      <div class="col-lg-8">
+                        <input type="number" name="txtId" id="txtId" placeholder="Ingrese cantidad a pedir" />
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="proveedorPedido">Producto</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="proveedorPedido" id="proveedorPedido" style="width: 44%;">
+                          <option value="1">Toyota</option>
+                          <option value="2">Mercedes</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="col-lg-1 offset-5">
+                      <div class="" style="align-content:space-between;">
+                        <button type="SUBMIT" class="btn btn-success">
+                          Guardar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!--  -->
+          </div>
+        </div>
+        <!-- Fin Formulario Orden de Pedido -->
 
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
               <a class="nav-link" href="gestionarOrdenesPedido.html">
-                <button class="btn btn-success">Agregar Pedido</button>
+                <button class="btn btn-primary">Agregar Pedido</button>
               </a>
             </div>
             <div class="col-lg-4 offset-5">
@@ -137,6 +219,7 @@
                         <a href="gestionarOrdenesPedido.html" class="btn btn-link">Eliminar</button>
                     </td>
                 </tr>
+                
                 <tr style="vertical-align: middle;">
                   <td style="text-align: center;">#2</td>
                   <td style="text-align: center;">15/11/2022</td>
