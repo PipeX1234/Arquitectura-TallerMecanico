@@ -63,6 +63,9 @@
             <li class="nav-item">
               <a class="nav-link" href="why.html">porque elegirnos</a>
             </li>
+            <li class="nav-item">
+              <a class="nav-link" href="indexAnon.html">Cerrar Sesión</a>
+            </li>
 
           </ul>
           
@@ -70,7 +73,7 @@
             <a href="">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Llama : +01 123455678990
+                Llama : +569 5551 6548
               </span>
             </a>
           </div>
@@ -102,7 +105,7 @@
                         Nombres del Cliente
                       </div>
                       <div class="col-lg-8">
-                        <input class="col-lg-5"/>
+                        <input class="col-lg-5" readonly value="Mario"/>
                       </div>
                     </div>
 
@@ -113,7 +116,7 @@
                         Apellido Paterno
                       </div>
                       <div class="col-lg-8">
-                        <input class="col-lg-5"/>
+                        <input class="col-lg-5" readonly value="Hernandez"/>
                       </div>
                     </div>
 
@@ -124,7 +127,7 @@
                         Apellido Materno
                       </div>
                       <div class="col-lg-8">
-                        <input class="col-lg-5"/>
+                        <input class="col-lg-5" readonly value="Leiva"/>
                       </div>
                     </div>
 
@@ -133,8 +136,8 @@
                     <div class="row">
                       <div class="col-lg-4"> <p class="mb-0">Rut Cliente</p> </div>
                       <div class="col-lg-8">
-                        <input type="number"  />
-                        - <input class="col-lg-2"/>
+                        <input type="number"  value="18459686" readonly/>
+                        - <input class="col-lg-2" readonly value="k"/>
                       </div>
                       
                     </div>
@@ -144,8 +147,7 @@
                     <div class="row">
                       <div class="col-lg-4"> <p class="mb-0">Número Telefónico</p> </div>
                       <div class="col-lg-8">
-                        <input type="number"  />
-                      
+                        <input type="number" value="956871597"/>
                       </div>
                       
                     </div>
@@ -177,12 +179,35 @@
                     <hr>
 
                     <div class="row">
-                      <div class="col-lg-4"> <p class="mb-0">Año Telefónico</p> </div>
+                      <div class="col-lg-4"> <p class="mb-0">Año Automovil</p> </div>
                       <div class="col-lg-8">
                         <input type="number"  />
-                      
                       </div>
-                      
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">Fecha de la Reserva</p> </div>
+                      <div class="col-lg-8">
+                        <input type="date"  />
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="proveedorPedido">Hora de la Reserva</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="proveedorPedido" id="proveedorPedido" style="width: 44%;">
+                          <option value="1">16:30</option>
+                          <option value="2">17:30</option>
+                          <option value="3">18:30</option>
+                          <option value="4">19:30</option>
+                        </select>
+                      </div>
                     </div>
 
                     <hr>
@@ -216,19 +241,19 @@
           <div class="col-lg-9">
             <div class="info_contact ">
               <div class="row">
-                <div class="col-md-3">
+                <!-- <div class="col-md-3">
                   <a href="#" class="link-box">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <span>
                       Location
                     </span>
                   </a>
-                </div>
+                </div> -->
                 <div class="col-md-5">
                   <a href="#" class="link-box">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     <span>
-                      Call +01 1234567890
+                      Llama : +569 5551 6548
                     </span>
                   </a>
                 </div>
@@ -236,7 +261,7 @@
                   <a href="#" class="link-box">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>
-                      demo@gmail.com
+                      ServiExpress@gmail.com
                     </span>
                   </a>
                 </div>
