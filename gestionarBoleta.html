@@ -49,7 +49,7 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ml-auto">
             <li class="nav-item ">
-              <a class="nav-link" href="index.html">Inicio </a>
+              <a class="nav-link" href="indexAdmin.html">Inicio </a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="gestionarBoleta.html"> Gestionar <br> Boletas</a>
@@ -85,6 +85,87 @@
                 <br>
             </div>
         </div>
+
+        <!-- Inicio Formulario Boleta -->
+        <div class="container">
+          <div class="col-lg-8 offset-2">
+            <form id="OrdenPedido" method="POST" action="gestionarBoleta.html">
+              <div class="form-group">
+                <div class="card">
+                  <div class="col-lg-12" style="padding: 20px;">
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">RUN cliente</p> </div>
+                      <div class="col-lg-8">
+                        <input type="text" placeholder="Ingrese el RUN del cliente sin DV"/>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="productoPedido">Vehiculo</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="productoPedido" id="productoPedido" style="width: 44%;">
+                          <option value="1">CFPK98</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">RUN Empleado</p> </div>
+                      <div class="col-lg-8">
+                        <input type="text" style="width: 25%;" value="15068968" readonly/> - 
+                        <input type="text" style="width: 8%;" value="2" readonly/>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="proveedorPedido">Servicio Solicitado</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="proveedorPedido" id="proveedorPedido" style="width: 44%;">
+                          <option value="1">Limpieza de Autos</option>
+                          <option value="2">Chequeo de Vehiculos</option>
+                          <option value="3">Reparación pastillas de freno</option>
+                          <option value="4">Cambios de Neumáticos</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">Precio Final</p> </div>
+                      <div class="col-lg-8">
+                        <input type="number" placeholder="Ingrese precio final" />
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="col-lg-1 offset-5">
+                      <div class="" style="align-content:space-between;">
+                        <button type="SUBMIT" class="btn btn-success">
+                          Guardar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!--  -->
+          </div>
+        </div>
+        <!-- Fin Formulario Boleta -->
 
         <div class="container">
           <div class="row">
@@ -162,8 +243,8 @@
                     <td style="text-align: center;">$400.000</td>
                     <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
                     <td style="text-align: center;">
-                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
-                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="editar">Editar</button>
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="btnEliminar" name="btnEliminar" onclick="eliminar()">Eliminar</button>
                     </td>
                 </tr>
                 <!-- Fin Boleta -->
@@ -250,6 +331,8 @@
   <script src="js/bootstrap.js"></script>
   <!-- custom js -->
   <script src="js/custom.js"></script>
+
+
 
 
 </body>
