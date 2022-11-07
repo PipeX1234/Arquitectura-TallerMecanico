@@ -871,3 +871,12 @@ a:focus {
 .logo{
   height: 50px;
 }
+
+.tcard{
+  border-radius: 5px;
+  max-width: 300px;
+  height: 100px;
+  border: 1px solid #292725;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
