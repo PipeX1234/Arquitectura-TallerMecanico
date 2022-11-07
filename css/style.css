@@ -841,3 +841,33 @@ a:focus {
   border-color: #e73600;
   border-radius: 5px;
 }
+
+/* Custom color webpay */
+
+.purple{
+  color: #6b196b;
+}
+
+.cyan{
+  color: #09B1FF;
+}
+
+.pink{
+  color: #D5006C;
+}
+
+.bg-purple{
+  background-color: #6b196b;
+}
+
+.bg-cyan{
+  background-color: #09B1FF;
+}
+
+.bg-pink{
+  background-color: #D5006C;
+}
+
+.logo{
+  height: 50px;
+}
