@@ -13,7 +13,7 @@
   <meta name="description" content="" />
   <meta name="author" content="" />
 
-  <title>SERVIEXPRESS</title>
+  <title>Pago en linea</title>
 
 
   <!-- bootstrap core css -->
@@ -39,7 +39,7 @@
     <div class="container-fluid">
       <nav class="navbar navbar-expand-lg custom_nav-container ">
         <a class="navbar-brand" href="index.html">
-          <span>SERVIEXPRESS</span>
+          <span>ServiExpress</span>
         </a>
 
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -48,31 +48,32 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav  ml-auto">
-            <li class="nav-item active">
-              <a class="nav-link" href="index.html">Inicio <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="reservaHoraCli.html">Reservar Hora </a>
+            <li class="nav-item ">
+              <a class="nav-link" href="index.html">Inicio </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="about.html">Nosotros</a>
+              <a class="nav-link" href="about.html">Nosotros<span class="sr-only">(current)</span> </a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item active">
               <a class="nav-link" href="service.html">Servicios</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="why.html">porque elegirnos</a>
+              <a class="nav-link" href="why.html">Historia</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="indexAnon.html">Cerrar Sesión</a>
+              <a class="nav-link" href="contact.html">Contacto</a>
             </li>
           </ul>
-          
+          <div class="quote_btn-container">
+            <form class="form-inline">
+              <button class="btn   nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
             </form>
             <a href="">
               <i class="fa fa-phone" aria-hidden="true"></i>
               <span>
-                Llama : +569 5551 6548
+                +569 87654321
               </span>
             </a>
           </div>
@@ -88,124 +89,107 @@
     <div class="container">
       <div class="heading_container heading_center">
         <h2>
-          Nuestros servicios
+          Detalle de la compra
         </h2>
       </div>
     </div>
-    <div class="container ">
-      <div class="row">
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s1.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Mantención general
-              </h4>
-              <p>
-                Realizamos una Mantención general a su vehículo
-              </p>
-              <a href="payment.html">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s2.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Reparación y reemplazo
-              </h4>
-              <p>
-                Realizamos Reparación y reemplazo de piezas a su vehículo
-              </p>
-              <a href="payment.html">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-              </a>
+    <div class="row">
+      <div class="col-lg-4 col-md-6 col-sm-12">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="box">
+                <div class="img-box">
+                  <button class="fa fa-times-circle fa-2x del" id="show"></button>
+                  <img src="images/s1.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>Servicio: Mantenimiento general</h5>
+                  <p>Vehiculos: 1</p>
+                  <p>Categoria: </p>
+                  <p>Precio: $30.000</p>
+                  <a href="">
+                    Detalles
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4 ">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s3.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Reparación y reemplazo de ruedas
-              </h4>
-              <p>
-                Realizamos Reparación y reemplazo de ruedas a su vehículo
-              </p>
-              <a href="payment.html">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s4.png" alt="">
-            </div>
-            <div class="detail-box">
-              <h4>
-                Alineación de las ruedas
-              </h4>
-              <p>
-                Realizamos alineaciones a las ruedas de su vehículo
-              </p>
-              <a href="payment.html">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-              </a>
+      </div>
+      <div class="col-lg-4 col-md-6 col-sm-12" id="hide">
+        <div class="container">
+          <div class="row">
+            <div class="col">
+              <div class="box">
+                <div class="img-box">
+                  <button class="fa fa-times-circle fa-2x del" onclick="hide()" id="hide"></button>
+                  <img src="images/s2.png" alt="">
+                </div>
+                <div class="detail-box">
+                  <h5>Servicio: Reparación y mantenimiento</h5>
+                  <p>Piezas: 1</p>
+                  <p>Categoria: Motor</p>
+                  <p>Precio: $75.000</p>
+                  <a href="">
+                    Detalles
+                    <!-- <i class="fa fa-long-arrow-right" aria-hidden="true"></i> -->
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s5.png" alt="">
+      </div>
+      <div class="col-lg-4 col-md-12 col-sm-12">
+        <div class="container">
+          <div class="box">
+            <div class="detail-box">
+              <h4>Total a pagar</h4>
+              <h5>Servicios: 2</h5>
+              <p>Servicio 1: $30.000</p>
+              <p>Servicio 2: $75.000</p>
+              <p>Descuento: 0</p>
+              <h5>Total a pagar: $110.000</h5>
+              <button class="bton">Continuar</button>
             </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="container">
+          <div class="box">
             <div class="detail-box">
               <h4>
-                Reparación del sistema de combustible
+                <button class="fa fa-plus-circle fa-2x del" onclick="hide()"></button>
+                Añade otro servicio
               </h4>
               <p>
-                Realizamos Reparación del sistema de combustible a su vehículo
+                Escoge un servicio de nuestro catálogo, así solo realizas una compra.
               </p>
-              <a href="payment.html">
-                Solicitar
+              <a href="service.html">
+                Servicios
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
-        <div class="col-md-6 col-lg-4">
-          <div class="box ">
-            <div class="img-box">
-              <img src="images/s6.png" alt="">
-            </div>
+      </div>
+      <div class="col-lg-6 col-md-12 col-sm-12">
+        <div class="container">
+          <div class="box">
             <div class="detail-box">
               <h4>
-                Afinar
+                <button class="fa fa-question-circle fa-2x del"></button>
+                ¿Tienes dudas?
               </h4>
               <p>
-                Realizamos afinaciones a su vehículo
+                Comunicate con un especialista, así podras personalizar tu atención.
               </p>
-              <a href="payment.html">
-                Solicitar
+              <a href="contact.html">
+                Contacto
                 <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
               </a>
             </div>
@@ -226,48 +210,53 @@
           <div class="col-lg-9">
             <div class="info_contact ">
               <div class="row">
-                <!-- <div class="col-md-3">
+                <div class="col-md-3">
                   <a href="#" class="link-box">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <span>
-                      Location
+                      Ubicación
                     </span>
                   </a>
-                </div> -->
-                <div class="col-md-5">
+                </div>
+                <div class="col-md-3">
                   <a href="#" class="link-box">
                     <i class="fa fa-phone" aria-hidden="true"></i>
                     <span>
-                      Llama : +569 5551 6548
+                      +569 87654321
                     </span>
                   </a>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-3">
                   <a href="#" class="link-box">
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                     <span>
-                      ServiExpress@gmail.com
+                      demo@gmail.com
                     </span>
                   </a>
                 </div>
+                <div class="col-md-3">
+                  <div class="col-6 px-2 mx-2">
+                    <label>Suscríbete y te enviaremos las mejores ofertas</label>
+                  </div>
+                </div>
+                <div class="col-md-3">
+                  <div class="info_form ">
+                    <form action="#">
+                      <input type="email" placeholder="Ingresa tu correo" />
+                      <button>
+                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                      </button>
+                    </form>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="col-md-5  col-lg-3 mx-auto">
-            <div class="info_form ">
-              <form action="#">
-                <input type="email" placeholder="Enter Your Email" />
-                <button>
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                </button>
-              </form>
             </div>
           </div>
         </div>
         <div class="info_logo">
           <a class="navbar-brand" href="index.html">
             <span>
-              SERVIEXPRESS
+              ServiExpress
             </span>
           </a>
         </div>

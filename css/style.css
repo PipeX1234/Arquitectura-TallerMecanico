@@ -808,3 +808,36 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+
+/* custom delete buttom */
+
+.del{
+  color: #ff6f3d;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+  top: 15%;
+  right: 10%;
+}
+
+/* custom cute button */
+
+.bton{
+  background-color: #ff6f3d;
+  padding: 10px 15px;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  border: 1px solid #963701;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+.bton:hover{
+  background-color: transparent;
+  color: #ff6f3d;
+  border-color: #e73600;
+  border-radius: 5px;
+}
