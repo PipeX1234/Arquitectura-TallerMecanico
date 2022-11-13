@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>SERVIEXPRESS</title>
+
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+
+<body>
+
+  <!-- header section strats -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>Taller Mecánico</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto">
+            <li class="nav-item ">
+              <a class="nav-link" href="indexAdmin.html">Inicio </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gestionarBoleta.html"> Gestionar <br> Boletas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gestionarOrdenesPedido.html">Gestionar Ordenes <br> De Pedido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gestionarServicios.html">Gestionar <br> Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="gestionarEmpleado.html">Gestionar <br> Empleados</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="gestionarProveedores.html">Gestionar <br> Proveedores</a>
+            </li>
+            <!-- <li class="nav-item active">
+              <a class="nav-link" href="index.html">Mi Perfil <span class="sr-only">(current)</span> </a>
+            </li> -->
+            <li class="nav-item">
+              <a class="nav-link" href="indexAnon.html">Cerrar Sesión</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <hr>
+  <!-- end header section -->
+
+  <!--  Sección de tabla inicio -->
+    <div class="container">
+        <div class="container-xl">
+            <div class="col-sm-6">
+                <h2>Administración de Boletas</h2>
+                <br>
+            </div>
+        </div>
+
+        <!-- Inicio Formulario Boleta -->
+        <div class="container">
+          <div class="col-lg-8 offset-2">
+            <form id="OrdenPedido" method="POST" action="gestionarBoleta.html">
+              <div class="form-group">
+                <div class="card">
+                  <div class="col-lg-12" style="padding: 20px;">
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">RUN cliente</p> </div>
+                      <div class="col-lg-8">
+                        <input type="text" placeholder="Ingrese el RUN del cliente sin DV"/>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="productoPedido">Vehiculo</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="productoPedido" id="productoPedido" style="width: 44%;">
+                          <option value="1">CFPK98</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">RUN Empleado</p> </div>
+                      <div class="col-lg-8">
+                        <input type="text" style="width: 25%;" value="15068968" readonly/> - 
+                        <input type="text" style="width: 8%;" value="2" readonly/>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4">
+                        <label for="proveedorPedido">Servicio Solicitado</label>
+                      </div>
+                      <div class="col-lg-8">
+                        <select name="proveedorPedido" id="proveedorPedido" style="width: 44%;">
+                          <option value="1">Limpieza de Autos</option>
+                          <option value="2">Chequeo de Vehiculos</option>
+                          <option value="3">Reparación pastillas de freno</option>
+                          <option value="4">Cambios de Neumáticos</option>
+                        </select>
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="row">
+                      <div class="col-lg-4"> <p class="mb-0">Precio Final</p> </div>
+                      <div class="col-lg-8">
+                        <input type="number" placeholder="Ingrese precio final" />
+                      </div>
+                    </div>
+
+                    <hr>
+
+                    <div class="col-lg-1 offset-5">
+                      <div class="" style="align-content:space-between;">
+                        <button type="SUBMIT" class="btn btn-success">
+                          Guardar
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </form>
+            <!--  -->
+          </div>
+        </div>
+        <!-- Fin Formulario Boleta -->
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <a class="nav-link" href="gestionarBoleta.html">
+                <button class="btn btn-success">Agregar Boleta</button>
+              </a>
+            </div>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="N° de la Boleta" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th style="text-align: center;">N° Factura</th>
+                <th style="text-align: center;">Fecha</th>
+                <th style="text-align: center;">Nombre Empleado</th>
+                <th style="text-align: center;">Nombre Cliente</th>
+                <th style="text-align: center;">Precio Total</th>
+                <th style="text-align: center;">Detalle</th>
+                <th style="text-align: center;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inicio Boleta -->
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1000</td>
+                    <td style="text-align: center;">21/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$210.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1001</td>
+                    <td style="text-align: center;">24/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$20.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1002</td>
+                    <td style="text-align: center;">28/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$35.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1003</td>
+                    <td style="text-align: center;">30/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$400.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="editar">Editar</button>
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="btnEliminar" name="btnEliminar" onclick="eliminar()">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Fin Boleta -->
+            </tbody>
+        </table>
+    </div>
+  <!-- Sección de Tabla fin -->
+
+  <!-- info section -->
+
+  <section class="info_section ">
+    <div class="info_container ">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-9">
+            <div class="info_contact ">
+              <div class="row">
+                <!-- <div class="col-md-3">
+                  <a href="#" class="link-box">
+                    <i class="fa fa-map-marker" aria-hidden="true"></i>
+                    <span>
+                      Location
+                    </span>
+                  </a>
+                </div> -->
+                <div class="col-md-5">
+                  <a href="#" class="link-box">
+                    <i class="fa fa-phone" aria-hidden="true"></i>
+                    <span>
+                      Llama : +569 5551 6548
+                    </span>
+                  </a>
+                </div>
+                <div class="col-md-4">
+                  <a href="#" class="link-box">
+                    <i class="fa fa-envelope" aria-hidden="true"></i>
+                    <span>
+                      ServiExpress@gmail.com
+                    </span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-5  col-lg-3 mx-auto">
+            <div class="info_form ">
+              <form action="#">
+                <input type="email" placeholder="Enter Your Email" />
+                <button>
+                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="info_logo">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              SERVIEXPRESS
+            </span>
+          </a>
+        </div>
+        <div class="social-box">
+          <a href="">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+          </a>
+          <a href="">
+            <i class="fa fa-youtube" aria-hidden="true"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+
+
+
+
+</body>
+
+</html>
