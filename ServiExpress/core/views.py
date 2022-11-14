@@ -16,6 +16,10 @@ from django.contrib.auth import login, logout, authenticate
 #from .forms import 
 from datetime import datetime, timedelta, time
 import random
-import requests
+#import requests
 import json
 # Create your views here.
+
+
+def index(request):
+    return render(request, 'core/index.html')

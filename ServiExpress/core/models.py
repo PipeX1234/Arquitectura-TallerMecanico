@@ -38,7 +38,7 @@ class EstadoOrden(models.Model):
 
 class Producto(models.Model):
     idProducto = models.IntegerField(primary_key=True, verbose_name="ID del Producto")
-    nombreProducto = models.CharField(null=False, blank=False, verbose_name="Nombre del Producto")
+    nombreProducto = models.CharField(max_length=60 ,null=False, blank=False, verbose_name="Nombre del Producto")
     precioProducto = models.IntegerField(null=False, blank=False, verbose_name="Precio del Producto")
     cantStockProd = models.IntegerField(null=False, blank=False, verbose_name="Stock del Producto")
 
@@ -56,8 +56,8 @@ class OrdenDePedido(models.Model):
 
 class DetalleOrden(models.Model):
     idDetalleOrden = models.IntegerField(primary_key=True, verbose_name="Id Detalle de Orden de Pedido")
-    idProducto = models.ForeignKey(Producto, verbose_name="Producto Seleccionado")
-    idOrdenPedido = models.ForeignKey(OrdenDePedido, verbose_name="Orden De Pedido")
+    idProducto = models.ForeignKey(Producto, on_delete=models.DO_NOTHING ,verbose_name="Producto Seleccionado")
+    idOrdenPedido = models.ForeignKey(OrdenDePedido, on_delete=models.DO_NOTHING, verbose_name="Orden De Pedido")
 
     def __str__(self):
         return str(self.idDetalleOrden)
@@ -83,7 +83,7 @@ class Servicio(models.Model):
 class PerfilCliente(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     runCliente = models.IntegerField(primary_key=True, verbose_name="Run sin puntos")
-    dvrunCliente = models.CharField(max_length=1, min_lenght=1, blank=False, null=False, verbose_name="-")
+    dvrunCliente = models.CharField(max_length=1, blank=False, null=False, verbose_name="-") 
     sNombreCliente = models.CharField(max_length=50, blank=False, null=False, verbose_name="Segundo Nombre")
     apMaternoCliente = models.CharField(max_length=50, blank=False, null=False, verbose_name="Apellido Materno")
     fechNacimCliente = models.DateField(null=False, blank=False, verbose_name="Fecha de Nacimiento")
@@ -105,7 +105,7 @@ class PerfilEmpleado(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     idTipoEmpleado = models.ForeignKey(TipoEmpleado, on_delete=models.DO_NOTHING)
     runEmpleado = models.IntegerField(primary_key=True, verbose_name="Run sin puntos")
-    dvrunEmpleado = models.CharField(max_length=1, min_lenght=1, blank=False, null=False, verbose_name="-")
+    dvrunEmpleado = models.CharField(max_length=1, blank=False, null=False, verbose_name="-")
     sNombreEmpleado = models.CharField(max_length=50, blank=False, null=False, verbose_name="Segundo Nombre")
     apMaternoEmpleaddo = models.CharField(max_length=50, blank=False, null=False, verbose_name="Apellido Materno")
     fechNacimEmpleado = models.DateField(null=False, blank=False, verbose_name="Fecha de Nacimiento")
