@@ -34,6 +34,8 @@
       rel="stylesheet"
     />
 
+    <link rel="stylesheet" href="{% static 'core/css/login.css' %}">
+
     <!-- Custom styles for this template -->
     <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
     <!-- responsive style -->
@@ -41,7 +43,80 @@
   </head>
 {% endblock head %}
   <body>
-    {% block content %} {% endblock content %} 
+      <!-- header section strats -->
+  <header class="header_section">
+    <div class="container-fluid">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>SERVIEXPRESS</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav  ml-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
+            </li>
+            {% if user.is_authenticated%}
+              <li class="nav-item active">
+                <a class="nav-link" href="reservaHoraCli.html">Reservar Hora </a>
+              </li>
+            {% endif%}
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'acerca' %}">Nosotros</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'servicio' %}">Servicios</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'why' %}">porque elegirnos</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gestionarBoleta' %}">Gestionar <br> Boletas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gestionarEmpleado' %}">Gestionar <br> Empleados</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gestionarOrdenesPedido' %}">Gestionar Ordenes <br> de Pedido</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gestionarProveedores' %}">Gestionar <br> Proveedores</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'gestionarServicio' %}">Gestionar <br> Servicios</a>
+            </li>
+            {%if user.is_authenticated%}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'cerrarSesion' %}">Cerrar Sesión</a>
+              </li>
+            {%endif%}
+            {%if not user.is_authenticated %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'iniciarSesion' %}">Iniciar Sesión</a>
+              </li>
+            {%endif%}
+
+          </ul>
+          
+            </form>
+            <a href="">
+              <i class="fa fa-phone" aria-hidden="true"></i>
+              <span>
+                Llama : +569 5551 6548
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- end header section -->
+{% block content %} {% endblock content %} 
+
     {% block piePagina %}
     <section class="info_section">
       <div class="info_container">

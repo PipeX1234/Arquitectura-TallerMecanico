@@ -1,6 +1,19 @@
 from django.urls import path
-from .views import index
-#from .views import adminPage, facturaCliente, historialVentaDetalle, index, about, index2, poblar_DB, product, product2, register, inicioSesion, shop, about2, historialClienteBoleta, shop2, shopcart, adminProd, historialVenta, adminBodega, cerrarSesion, perfilUsuario, adminUsuarios, comprarProd, seguimiento
+from .views import index, why, iniciarSesion, servicio, acerca, reservaHora, pagoServicio, webPayPag, gestionarBoleta, gestionarEmpleado
+from .views import gestionarOrdenesPedido, gestionarProveedores, gestionarServicio
+
 urlpatterns = [ 
     path('',index, name="index"),
+    path('why', why, name="why"),
+    path('iniciarSesion', iniciarSesion, name="iniciarSesion"),
+    path('servicio', servicio, name="servicio"),
+    path('acerca', acerca, name="acerca"),
+    path('reservarHora', reservaHora, name="reservarHora"),
+    path('pagoServicio', pagoServicio, name="pagoServicio"),
+    path('webpay', webPayPag, name="webpay"),
+    path('gestionarBoleta', gestionarBoleta, name="gestionarBoleta"),
+    path('gestionarEmpleado', gestionarEmpleado, name="gestionarEmpleado"),
+    path('gestionarOrdenesPedido', gestionarOrdenesPedido, name="gestionarOrdenesPedido"),
+    path('gestionarProveedores', gestionarProveedores, name="gestionarProveedores"),
+    path('gestionarServicio', gestionarServicio, name="gestionarServicio")
 ]

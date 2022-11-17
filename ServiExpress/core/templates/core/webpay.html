@@ -1,25 +1,26 @@
-<!DOCTYPE html>
+{% load static %}
+!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="images/fevicon.png" type="image/gif" />
+    <link rel="icon" href="{% static 'core/images/fevicon.png' %}" type="image/gif" />
     <title>ServiExpress</title>
 
     <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+  <link rel="stylesheet" type="text/css" href="{% static 'core/css/bootstrap.css' %}" />
 
   <!-- fonts style -->
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
 
   <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <link href="{% static 'core/css/font-awesome.min.css' %}" rel="stylesheet" />
 
   <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
+  <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
   <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
+  <link href="{% static 'core/css/responsive.css' %}" rel="stylesheet" />
 </head>
 <body>
     <section>
@@ -32,7 +33,7 @@
           </div>
           <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand" href="#"><img class="logo" src="/images/webpay.svg" alt=""></a>
+              <a class="navbar-brand" href="#"><img class="logo" src="{% static 'core/images/webpay.svg' %}" alt=""></a>
             </div>
           </nav>
     </section>
@@ -63,7 +64,7 @@
                                 <div class="col">
                                   <div class="tcard" style="text-align: center; vertical-align:middle; justify-content: center; margin: auto;">
                                     <div class="img-box my-3">
-                                      <img class="logo" src="images/onepay.png" alt="">
+                                      <img class="logo" src="{% static 'core/images/onepay.png' %}" alt="">
                                     </div>
                                   </div>
                                 </div>
@@ -117,7 +118,7 @@
                           </div>
                     </div>
                     <div class="row ml-3 my-3">
-                        <a href="payment.html"><i class="fa fa-arrow-left mx-2"></i>Anular compra y volver a ServiExpress</a>
+                        <a href="{% url 'pagoServicio' %}"><i class="fa fa-arrow-left mx-2"></i>Anular compra y volver a ServiExpress</a>
                     </div>
                     <br>
                     <div class="row ml-3 my-3 pt-3">
@@ -133,10 +134,10 @@
 
 
     <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
   <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
+  <script src="{% static 'core/js/bootstrap.js' %}"></script>
   <!-- custom js -->
-  <script src="js/custom.js"></script>
+  <script src="{% static 'core/js/custom.js' %}"></script>
 </body>
 </html>

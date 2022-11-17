@@ -1,87 +1,6 @@
-<!DOCTYPE html>
-<html>
-
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>Pago en linea</title>
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-</head>
-
-<body>
-
-  <!-- header section strats -->
-  <header class="header_section">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
-          <span>ServiExpress</span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class=""> </span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ml-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="index.html">Inicio </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="about.html">Nosotros<span class="sr-only">(current)</span> </a>
-            </li>
-            <li class="nav-item active">
-              <a class="nav-link" href="service.html">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="why.html">Historia</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="contact.html">Contacto</a>
-            </li>
-          </ul>
-          <div class="quote_btn-container">
-            <form class="form-inline">
-              <button class="btn   nav_search-btn" type="submit">
-                <i class="fa fa-search" aria-hidden="true"></i>
-              </button>
-            </form>
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                +569 87654321
-              </span>
-            </a>
-          </div>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <!-- end header section -->
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
 
   <!-- service section -->
 
@@ -101,7 +20,7 @@
               <div class="box">
                 <div class="img-box">
                   <button class="fa fa-times-circle fa-2x del" id="show"></button>
-                  <img src="images/s1.png" alt="">
+                  <img src="{% static 'core/images/s1.png' %}" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>Servicio: Mantenimiento general</h5>
@@ -124,7 +43,7 @@
               <div class="box">
                 <div class="img-box">
                   <button class="fa fa-times-circle fa-2x del" onclick="hide()" id="hide"></button>
-                  <img src="images/s2.png" alt="">
+                  <img src="{% static 'core/images/s2.png' %}" alt="">
                 </div>
                 <div class="detail-box">
                   <h5>Servicio: Reparación y mantenimiento</h5>
@@ -151,7 +70,7 @@
               <p>Servicio 2: $75.000</p>
               <p>Descuento: 0</p>
               <h5 class="my-3">Total a pagar: $110.000</h5>
-              <a href="webpay.html" class="bton py-2" style="color: white;">Continuar</a>
+              <a href="{% url 'webpay' %}" class="bton py-2" style="color: white;">Continuar</a>
             </div>
           </div>
         </div>
@@ -199,106 +118,4 @@
     </div>
   </section>
 
-  <!-- end service section -->
-
-  <!-- info section -->
-
-  <section class="info_section ">
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9">
-            <div class="info_contact ">
-              <div class="row">
-                <div class="col-md-3">
-                  <a href="#" class="link-box">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span>
-                      Ubicación
-                    </span>
-                  </a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#" class="link-box">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>
-                      +569 87654321
-                    </span>
-                  </a>
-                </div>
-                <div class="col-md-3">
-                  <a href="#" class="link-box">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span>
-                      demo@gmail.com
-                    </span>
-                  </a>
-                </div>
-                <div class="col-md-3">
-                  <div class="col-6 px-2 mx-2">
-                    <label>Suscríbete y te enviaremos las mejores ofertas</label>
-                  </div>
-                </div>
-                <div class="col-md-3">
-                  <div class="info_form ">
-                    <form action="#">
-                      <input type="email" placeholder="Ingresa tu correo" />
-                      <button>
-                        <i class="fa fa-arrow-right" aria-hidden="true"></i>
-                      </button>
-                    </form>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="info_logo">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              ServiExpress
-            </span>
-          </a>
-        </div>
-        <div class="social-box">
-          <a href="">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-youtube" aria-hidden="true"></i>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- end info section -->
-
-  <!-- footer section -->
-  <footer class="footer_section">
-    <div class="container">
-      <p>
-        &copy; <span id="displayYear"></span> All Rights Reserved By
-        <a href="https://html.design/">Free Html Templates</a>
-      </p>
-    </div>
-  </footer>
-  <!-- footer section -->
-
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-
-
-</body>
-
-</html>
+{% endblock content %}
