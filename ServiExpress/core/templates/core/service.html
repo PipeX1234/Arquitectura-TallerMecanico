@@ -25,11 +25,17 @@
               <p>
                 Realizamos una Mantención general a su vehículo
               </p>
-              <a href="{% url 'pagoServicio' %}">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-              </a>
+              {% if user.is_authenticated %}
+                <a href="{% url 'pagoServicio' %}">
+                  Solicitar
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'iniciarSesion' %}">
+                  Debe iniciar Sesión para Pedir un Servicio
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -45,11 +51,17 @@
               <p>
                 Realizamos Reparación y reemplazo de piezas a su vehículo
               </p>
-              <a href="{% url 'pagoServicio' %}">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-              </a>
+              {% if user.is_authenticated %}
+                <a href="{% url 'pagoServicio' %}">
+                  Solicitar
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'iniciarSesion' %}">
+                  Debe iniciar Sesión para Pedir un Servicio
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -65,10 +77,17 @@
               <p>
                 Realizamos Reparación y reemplazo de ruedas a su vehículo
               </p>
-              <a href="{% url 'pagoServicio' %}">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+              {% if user.is_authenticated %}
+                <a href="{% url 'pagoServicio' %}">
+                  Solicitar
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'iniciarSesion' %}">
+                  Debe iniciar Sesión para Pedir un Servicio
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -84,11 +103,17 @@
               <p>
                 Realizamos alineaciones a las ruedas de su vehículo
               </p>
-              <a href="{% url 'pagoServicio' %}">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-
-              </a>
+              {% if user.is_authenticated %}
+                <a href="{% url 'pagoServicio' %}">
+                  Solicitar
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'iniciarSesion' %}">
+                  Debe iniciar Sesión para Pedir un Servicio
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -104,10 +129,17 @@
               <p>
                 Realizamos Reparación del sistema de combustible a su vehículo
               </p>
-              <a href="{% url 'pagoServicio' %}">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+              {% if user.is_authenticated %}
+                <a href="{% url 'pagoServicio' %}">
+                  Solicitar
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'iniciarSesion' %}">
+                  Debe iniciar Sesión para Pedir un Servicio
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>
@@ -123,10 +155,17 @@
               <p>
                 Realizamos afinaciones a su vehículo
               </p>
-              <a href="{% url 'pagoServicio' %}">
-                Solicitar
-                <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
-              </a>
+              {% if user.is_authenticated %}
+                <a href="{% url 'pagoServicio' %}">
+                  Solicitar
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% else %}
+                <a href="{% url 'iniciarSesion' %}">
+                  Debe iniciar Sesión para Pedir un Servicio
+                  <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                </a>
+              {% endif %}
             </div>
           </div>
         </div>

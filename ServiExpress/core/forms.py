@@ -15,6 +15,12 @@ class ProveedorForm(ModelForm):
         model = Proveedor
         fields = ['idSucursalProveedor', 'nombreProveedor', 'correoProveedor', 'telefonoProveedor']
 
+class IniciarSesionForm(Form):
+    username = forms.CharField(widget=forms.TextInput(), label="Correo")
+    password = forms.CharField(widget=forms.PasswordInput(), label="Contraseña")
+    class Meta:
+        fields = ['username', 'password']
+
 # class RegistrarUsuarioForm(UserCreationForm):
 #     rutUsuario = forms.CharField(max_length=12, required=True, label="Rut")
 #     direccion = forms.CharField(max_length=300, required=True, label="Direccion")

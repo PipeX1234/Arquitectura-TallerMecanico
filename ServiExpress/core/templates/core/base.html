@@ -60,35 +60,41 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
             </li>
-            {% if user.is_authenticated%}
+            {% if user.is_authenticated %}
               <li class="nav-item active">
-                <a class="nav-link" href="reservaHoraCli.html">Reservar Hora </a>
+                <a class="nav-link" href="{% url 'reservarHora' %}">Reservar Hora </a>
               </li>
             {% endif%}
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'acerca' %}">Nosotros</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'servicio' %}">Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'why' %}">porque elegirnos</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'gestionarBoleta' %}">Gestionar <br> Boletas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'gestionarEmpleado' %}">Gestionar <br> Empleados</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'gestionarOrdenesPedido' %}">Gestionar Ordenes <br> de Pedido</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'gestionarProveedores' %}">Gestionar <br> Proveedores</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="{% url 'gestionarServicio' %}">Gestionar <br> Servicios</a>
-            </li>
+            {% if not user.is_staff or not user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'acerca' %}">Nosotros</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'servicio' %}">Servicios</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'why' %}">porque elegirnos</a>
+              </li>
+            {% endif %}
+            {% if user.is_authenticated and user.is_staff %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gestionarBoleta' %}">Gestionar <br> Boletas</a>
+              </li>
+            {% endif %}
+            {% if user.is_authenticated and user.is_superuser %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gestionarEmpleado' %}">Gestionar <br> Empleados</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gestionarOrdenesPedido' %}">Gestionar Ordenes <br> de Pedido</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gestionarProveedores' %}">Gestionar <br> Proveedores</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gestionarServicio' %}">Gestionar <br> Servicios</a>
+              </li>
+            {% endif %}
             {%if user.is_authenticated%}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'cerrarSesion' %}">Cerrar Sesión</a>
@@ -101,14 +107,6 @@
             {%endif%}
 
           </ul>
-          
-            </form>
-            <a href="">
-              <i class="fa fa-phone" aria-hidden="true"></i>
-              <span>
-                Llama : +569 5551 6548
-              </span>
-            </a>
           </div>
         </div>
       </nav>
