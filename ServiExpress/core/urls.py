@@ -1,6 +1,6 @@
 from django.urls import path
 from .views import index, why, iniciarSesion, servicio, acerca, reservaHora, pagoServicio, webPayPag, gestionarBoleta, gestionarEmpleado
-from .views import gestionarOrdenesPedido, gestionarProveedores, gestionarServicio, cerrarSesion, PoblarDB
+from .views import gestionarOrdenesPedido, gestionarProveedores, gestionarServicio, cerrarSesion, PoblarDB, poblarProveedores
 
 urlpatterns = [ 
     path('',index, name="index"),
@@ -15,7 +15,8 @@ urlpatterns = [
     path('gestionarBoleta', gestionarBoleta, name="gestionarBoleta"),
     path('gestionarEmpleado', gestionarEmpleado, name="gestionarEmpleado"),
     path('gestionarOrdenesPedido', gestionarOrdenesPedido, name="gestionarOrdenesPedido"),
-    path('gestionarProveedores', gestionarProveedores, name="gestionarProveedores"),
+    path('gestionarProveedores/<action>/<id>', gestionarProveedores, name="gestionarProveedores"),
     path('gestionarServicio', gestionarServicio, name="gestionarServicio"),
-    path('PoblarDB', PoblarDB, name="PoblarDB")
+    path('PoblarDB', PoblarDB, name="PoblarDB"),
+    path('poblarProveedores', poblarProveedores, name="poblarProveedores")
 ]

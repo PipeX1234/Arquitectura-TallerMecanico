@@ -12,22 +12,27 @@ from django.contrib.auth.models import User
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView, UpdateView, DeleteView, DetailView
 from django.contrib.auth import login, logout, authenticate
-from .models import PerfilCliente, PerfilEmpleado, Proveedor, TipoEmpleado
+from .models import PerfilCliente, PerfilEmpleado, Proveedor, TipoEmpleado, SucursalProveedor
 from .forms import ProveedorForm, IniciarSesionForm
 from datetime import datetime, timedelta, time
 import random
 #import requests
 import json
 # Create your views here.
-
+    # elif not (request.user.is_authenticated and request.user.is_staff):
+    #     return redirect(index)
 
 def index(request):
     return render(request, 'core/index.html')
 
 def why(request):
+    if request.user.is_superuser:
+        return redirect(index)
     return render(request, 'core/why.html')
 
 def iniciarSesion(request):
+    if request.user.is_authenticated:
+        return redirect(index)
     data = {"mesg": "", "form": IniciarSesionForm}
 
     if request.method == "POST":
@@ -47,41 +52,153 @@ def iniciarSesion(request):
     return render(request, 'core/login.html', data)
 
 def cerrarSesion(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
+
     logout(request)
     return redirect(index)
 
 def servicio(request):
     return render(request, 'core/service.html')
 
-def acerca(request) :
+def acerca(request):
+    if request.user.is_superuser:
+        return redirect(index)
+
     return render(request, 'core/about.html')
 
 def reservaHora(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
     return render(request, 'core/reservaHoraCli.html')
 
 def pagoServicio(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
     return render(request, 'core/payment.html')
 
 def webPayPag(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
     return render(request, 'core/webpay.html')
 
 def gestionarBoleta(request):
+    if not request.user.is_authenticated or not request.user.is_staff:
+        return redirect(index)
     return render(request,'core/gestionarBoleta.html')
 
 def gestionarEmpleado(request):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect(index)
     return render(request, 'core/gestionarEmpleado.html')
 
 def gestionarOrdenesPedido(request):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect(index)
     return render(request, 'core/gestionarOrdenesPedido.html')
 
-def gestionarProveedores(request):
-    return render(request, 'core/gestionarProveedores.html')
+def gestionarProveedores(request, action, id):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect(index)
+
+    data = {"mesg":"", "form":ProveedorForm, "action":action, "id":id}
+
+    if(action == 'ins'):
+
+        if request.method == "POST":
+            form = ProveedorForm(request.POST)
+            if form.is_valid:
+                print("Es valido")
+                try:
+                    form.save()
+                    data["mesg"] = "El Proveedor se ha agregado correctamente"
+                    data["action"] = "na"
+                except:
+                    data["mesg"] = "No se ha logrado agregar el proveedor, revise los datos o intentelo de nuevo más tarde"
+
+    elif(action == 'upd'):
+
+        objeto = Proveedor.objects.get(idProveedor=id)
+        if request.method == "POST":
+            form = ProveedorForm(data=request.POST, instance=objeto)
+            if form.is_valid:
+                print("Es valido")
+                try:
+                    form.save()
+                    data["mesg"] = "Se han actualizado los datos del proveedor correctamente"
+                    data["action"] = "na"
+                except Exception as err:
+                    print(f"ha ocurrido un error al editar {err}")
+                    data["mesg"] = "No se ha logrado actualizar al proveedor, revise los datos o intentelo más tarde"
+
+        data["form"] = ProveedorForm(instance=objeto)
+        
+
+    elif(action == 'del'):
+
+        try:
+            Proveedor.objects.get(idProveedor=id).delete()
+            data["mesg"] = "Se ha eliminado el proveedor correctamente"
+            return redirect(gestionarProveedores, action='na', id = '-1')
+        except:
+            data["mesg"] = "No se ha podido eliminar, actualice la página y revise si existe o intentelo nuevamente más tarde"
+        
+    else:
+        print("Solo se está listando")
+
+    data["list"] = Proveedor.objects.all().order_by('idProveedor').values('idProveedor','idSucursalProveedor__region', 
+        'idSucursalProveedor__comuna', 'nombreProveedor', 'correoProveedor', 'telefonoProveedor')
+    return render(request, 'core/gestionarProveedores.html', data)
 
 def gestionarServicio(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
     return render(request, 'core/gestionarServicios.html')
+
+def poblarProveedores(request):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect(index)
+
+    try:
+        #Se eliminan los proveedores
+        try:
+            print("Intentando Eliminar Proveedores")
+            SucursalProveedor.objects.all().delete()
+            Proveedor.objects.all().delete()
+        except Exception as err:
+            print(f"Error al intentar eliminar proveedores: {err}")
+        
+        #Se intentan crear las sucursales del proveedor
+        try:
+            print("Creando Sucursales Proveedor")
+            SucursalProveedor.objects.create(idSucursalProveedor=1, region="Santiago", comuna="Recoleta")
+            SucursalProveedor.objects.create(idSucursalProveedor=2, region="Santiago", comuna="Las Condes")
+            SucursalProveedor.objects.create(idSucursalProveedor=3, region="Valparaíso", comuna="Valparaíso")
+            SucursalProveedor.objects.create(idSucursalProveedor=4, region="Arica", comuna="Arica")
+        except Exception as err:
+            print(f"Error al crear las sucursales proveedor: {err}")
+
+        try:
+            print("Intentando crear los Proveedores")
+            Proveedor.objects.create(idProveedor=1, idSucursalProveedor=SucursalProveedor.objects.get(idSucursalProveedor=1), 
+                nombreProveedor="Chevrolet", correoProveedor="proveedor@chevrolet.com", telefonoProveedor=48751684)
+            Proveedor.objects.create(idProveedor=2, idSucursalProveedor=SucursalProveedor.objects.get(idSucursalProveedor=2), 
+                nombreProveedor="Toyota", correoProveedor="proveedor@toyota.com", telefonoProveedor=48751684)
+            Proveedor.objects.create(idProveedor=3, idSucursalProveedor=SucursalProveedor.objects.get(idSucursalProveedor=4), 
+                nombreProveedor="Suzuli", correoProveedor="proveedor@suzuki.com", telefonoProveedor=48751684)
+        except Exception as err:
+            print(f"Error al intentar crear los proveedores: {err}")
+
+    except Exception as err:
+        print(f"Error en el proceso de Poblar Proveedores: {err}")
+
+    return redirect(gestionarProveedores)
 
 
 def PoblarDB(request):
+    if not request.user.is_authenticated or not request.user.is_superuser:
+        return redirect(index)
+    
     ##Se crean los tipo empleado
     try:
         print("Se intentan crear los tipos Empleados")

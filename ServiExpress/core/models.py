@@ -17,14 +17,14 @@ class SucursalProveedor(models.Model):
     comuna = models.CharField(max_length=50, blank=False, null=False, verbose_name="Comuna")
 
     def __str__(self):
-        return self.region + " " + self.comuna
+        return self.region + " - " + self.comuna
 
 class Proveedor(models.Model):
     idProveedor = models.IntegerField(primary_key=True, verbose_name="Id del producto") 
-    idSucursalProveedor = models.ForeignKey(SucursalProveedor, on_delete=models.DO_NOTHING)
-    nombreProveedor = models.CharField(max_length=160, blank=False, null=False, verbose_name="Region")
+    idSucursalProveedor = models.ForeignKey(SucursalProveedor, on_delete=models.DO_NOTHING, verbose_name="Sucursal")
+    nombreProveedor = models.CharField(max_length=160, blank=False, null=False, verbose_name="Nombre")
     correoProveedor = models.CharField(max_length=100, null=False, blank=False, verbose_name="Correo Proveedor")
-    telefonoProveedor = models.IntegerField(blank=False, null=False, verbose_name="Precio Producto")
+    telefonoProveedor = models.IntegerField(blank=False, null=False, verbose_name="Telefono Proveedor")
 
     def __str__(self):
         return self.nombreProveedor

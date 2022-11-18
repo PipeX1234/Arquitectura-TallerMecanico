@@ -10,26 +10,53 @@
                 <br>
             </div>
         </div>
-
-        <div class="container">
-          <div class="row">
-            <div class="col-lg-3">
-              <a class="nav-link" href="gestionarProveedores.html">
-                <button class="btn btn-success">Agregar Proveedor</button>
-              </a>
-            </div>
-            <div class="col-lg-4 offset-5">
-              <form>
-                <input type="search"  placeholder="N° del pedido" class="col-lg-8">
-                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
-                    <i class="fa fa-search" aria-hidden="true"></i>
-                </button>
-              </form>
+        {% if action == 'na' or action == 'del' %}
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3">
+                <a class="nav-link" href="{% url 'gestionarProveedores' 'ins' '-1' %}">
+                  <button class="btn btn-success">Agregar Proveedor</button>
+                </a>
+              </div>
+              <div class="col-lg-4 offset-5">
+                <form>
+                  <input type="search"  placeholder="N° del pedido" class="col-lg-8">
+                  <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
+        {% endif %}
+        {% if action == 'ins' or action == 'upd' %}
+
+          <div class="container">
+            <form method="POST" action="" enctype="multipart/form-data" id="formProveedor" name="formProveedor" class="col-lg-6 offset-3">
+              {% csrf_token %} {{ form.as_p }}
+              <input type="submit" value="Guardar" class="col-lg-3 offset-4 btn btn-primary">
+            </form>
+
+            <div class="row">
+              <div class="col-lg-3 offset-5">
+                <a class="nav-link" href="{% url 'gestionarProveedores' 'na' '-1' %}">
+                  <button class="btn btn-danger">Cancelar</button>
+                </a>
+              </div>
+              {% comment %} <div class="col-lg-4 offset-5">
+                <form>
+                  <input type="search"  placeholder="N° del pedido" class="col-lg-8">
+                  <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                      <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </div> {% endcomment %}
+            </div>
+          </div>
+        {% endif %}
 
         <br>
+        {% if list and action != 'ins' and action != 'upd' %}
         <table class="table table-hover">
             <thead>
                 <tr>
@@ -43,20 +70,38 @@
             </thead>
             <tbody>
                 <!-- Inicio Boleta -->
-                <tr style="vertical-align: middle;">
-                    <td style="text-align: center;"># 1</td>
-                    <td style="text-align: center;">Toyota</td>
-                    <td style="text-align: center;">proveedor@toyota.cl</td>
-                    <td style="text-align: center;">9 56915689</td>
-                    <td style="text-align: center;">Región Metropolitana, Maipú</td>
-                    <td style="text-align: center;">
-                        <a href="gestionarProveedores.html" class="btn btn-link">Editar</button>
-                        <a href="gestionarProveedores.html" class="btn btn-link">Eliminar</button>
-                    </td>
-                </tr>
+                {% for prov in list %}
+                  <tr style="vertical-align: middle;">
+                      <td style="text-align: center;"># {{prov.idProveedor}}</td>
+                      <td style="text-align: center;">{{prov.nombreProveedor}}</td>
+                      <td style="text-align: center;">{{prov.correoProveedor}}</td>
+                      <td style="text-align: center;">{{prov.telefonoProveedor}}</td>
+                      <td style="text-align: center;">{{prov.idSucursalProveedor__region}} - {{prov.idSucursalProveedor__comuna}}</td>
+                      <td style="text-align: center;">
+                          <a href="{% url 'gestionarProveedores' 'upd' prov.idProveedor %}" class="btn btn-link">Editar</button>
+                          <a href="{% url 'gestionarProveedores' 'del' prov.idProveedor %}" class="btn btn-link">Eliminar</button>
+                      </td>
+                  </tr>
+                {% endfor %}
                 <!-- Fin Boleta -->
             </tbody>
         </table>
+        {% elif action == 'ins' or action == 'upd' %}
+          <h1>Por favor, rellene los datos</h1>
+        {% else %}
+          <div>
+            <h1>
+              No se han encontrado proveedores, intente agregar uno nuevo <br>
+              <a href="{% url 'poblarProveedores' %}">Poblar Proveedores</a>
+            </h1>
+          </div>
+        {% endif %}
+        {% if mesg %}
+          <div class="col-lg-6 offset-3 bg-info text-white p-3 mb-2" style="text-align: center;">
+            {{mesg}}
+          </div>
+        {% endif %}
+
     </div>
   <!-- Sección de Tabla fin -->
 
