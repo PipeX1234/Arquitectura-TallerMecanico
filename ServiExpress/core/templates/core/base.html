@@ -40,6 +40,8 @@
     <link href="{% static 'core/css/style.css' %}" rel="stylesheet" />
     <!-- responsive style -->
     <link href="{% static 'core/css/responsive.css' %}" rel="stylesheet" />
+    <!-- jQery -->
+    <script src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
   </head>
 {% endblock head %}
   <body>
@@ -60,7 +62,7 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'index' %}">Inicio <span class="sr-only">(current)</span></a>
             </li>
-            {% if user.is_authenticated %}
+            {% if user.is_authenticated and not user.is_staff or user.is_superuser %}
               <li class="nav-item active">
                 <a class="nav-link" href="{% url 'reservarHora' %}">Reservar Hora </a>
               </li>
@@ -173,9 +175,10 @@
     </section>
     <hr>
     {% endblock piePagina %}
-
-    <!-- jQery -->
-    <script src="{% static 'core/js/jquery-3.4.1.min.js' %}"></script>
+    <!-- Jquery Validate -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.5/jquery.validate.min.js" integrity="sha512-rstIgDs0xPgmG6RX1Aba4KV5cWJbAMcvRCVmglpam9SoHZiUCyQVDdH2LPlxoHtrv17XWblE/V/PP+Tr04hbtA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Validaciones -->
+    <script src="{% static 'core/js/validacion.js' %}"></script>
     <!-- bootstrap js -->
     <script src="{% static 'core/js/bootstrap.js' %}"></script>
     <!-- custom js -->

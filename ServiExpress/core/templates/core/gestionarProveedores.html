@@ -87,7 +87,7 @@
             </tbody>
         </table>
         {% elif action == 'ins' or action == 'upd' %}
-          <h1>Por favor, rellene los datos</h1>
+
         {% else %}
           <div>
             <h1>
@@ -105,4 +105,13 @@
     </div>
   <!-- Sección de Tabla fin -->
 
+  <!-- Script para cambiar la clase y que se vea mejor, owo (Hay que ponerle más cosas, pero es la base) -->
+  {% comment %} <script>
+		$(document).ready(function(){
+			document.getElementById("id_idSucursalProveedor").className = "col-lg-6 offset-1";
+			document.getElementById("id_nombreProveedor").className = "col-lg-6 offset-1";
+			document.getElementById("id_correoProveedor").className = "col-lg-6 offset-1";
+			document.getElementById("id_telefonoProveedor").className = "col-lg-6 offset-1";
+		})
+	</script> {% endcomment %}
 {% endblock content %}

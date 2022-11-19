@@ -8,18 +8,15 @@
     </div>
     <div class="formulario">
         <h1>Inicio de sesión</h1>
-        <form method="POST" action="" enctype="multipart/form-data" id="formLogin">
+        <form method="POST" action="" enctype="multipart/form-data" id="formLogin" name="formLogin">
             {% csrf_token %} {{ form.as_p }}
             <input type="submit" value="Iniciar">
         </form>
         {% comment %} <div class="recordar">¿Olvido su contraseña?</div> {% endcomment %}
         {% if mesg %}
-            <div class="registrarse">
-                <a href="indexAdmin.html">{{mesg}}</a>
-            </div>
+          <div class="col-lg-6 offset-3 bg-info text-white p-3 mb-2" style="text-align: center;">
+            {{mesg}}
+          </div>
         {% endif %}
-        <div class="registrarse">
-            <a href="index.html">Quiero ingresar como Cliente</a>
-        </div>
     </div>
 {% endblock content %}

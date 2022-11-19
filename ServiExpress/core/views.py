@@ -46,9 +46,9 @@ def iniciarSesion(request):
                     login(request, user)
                     return redirect(index)
                 else:
-                    data["mesg"] = "¡La cuenta o la password no son correctos!"
+                    data["mesg"] = "El usuario o la contraseña no son correctos"
             else:
-                data["mesg"] = "¡La cuenta o la password no son correctos!"
+                data["mesg"] = "El usuario o la contraseña no son correctos"
     return render(request, 'core/login.html', data)
 
 def cerrarSesion(request):
