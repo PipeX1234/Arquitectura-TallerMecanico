@@ -15,3 +15,4 @@ function hide() {
         x.style.display = "none";
     }
 }
+

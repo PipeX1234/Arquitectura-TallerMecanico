@@ -93,7 +93,7 @@ def gestionarEmpleado(request):
     return render(request, 'core/gestionarEmpleado.html')
 
 def gestionarOrdenesPedido(request):
-    if not request.user.is_authenticated or not request.user.is_superuser:
+    if not request.user.is_authenticated or not request.user.is_staff:
         return redirect(index)
     return render(request, 'core/gestionarOrdenesPedido.html')
 
@@ -201,14 +201,14 @@ def poblarProveedores(request):
             Proveedor.objects.create(idProveedor=2, idSucursalProveedor=SucursalProveedor.objects.get(idSucursalProveedor=2), 
                 nombreProveedor="Toyota", correoProveedor="proveedor@toyota.com", telefonoProveedor=48751684)
             Proveedor.objects.create(idProveedor=3, idSucursalProveedor=SucursalProveedor.objects.get(idSucursalProveedor=4), 
-                nombreProveedor="Suzuli", correoProveedor="proveedor@suzuki.com", telefonoProveedor=48751684)
+                nombreProveedor="SuzuCLI", correoProveedor="proveedor@suzuki.com", telefonoProveedor=48751684)
         except Exception as err:
             print(f"Error al intentar crear los proveedores: {err}")
 
     except Exception as err:
         print(f"Error en el proceso de Poblar Proveedores: {err}")
 
-    return redirect(gestionarProveedores)
+    return redirect(gestionarProveedores, action="na", id="-1")
 
 
 def PoblarDB(request):

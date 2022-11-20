@@ -82,13 +82,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'gestionarBoleta' %}">Gestionar <br> Boletas</a>
               </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'gestionarOrdenesPedido' %}">Gestionar Ordenes <br> de Pedido</a>
+              </li>
             {% endif %}
             {% if user.is_authenticated and user.is_superuser %}
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'gestionarEmpleado' %}">Gestionar <br> Empleados</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="{% url 'gestionarOrdenesPedido' %}">Gestionar Ordenes <br> de Pedido</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="{% url 'gestionarProveedores' 'na' '-1' %}">Gestionar <br> Proveedores</a>
