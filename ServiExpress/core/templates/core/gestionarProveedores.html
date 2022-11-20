@@ -10,7 +10,7 @@
                 <br>
             </div>
         </div>
-        {% if action == 'na' or action == 'del' %}
+        {% if action == 'na' or action == 'del' or action == 'bus' %}
           <div class="container">
             <div class="row">
               <div class="col-lg-3">
@@ -18,14 +18,21 @@
                   <button class="btn btn-success">Agregar Proveedor</button>
                 </a>
               </div>
-              <div class="col-lg-4 offset-5">
-                <form>
-                  <input type="search"  placeholder="N° del pedido" class="col-lg-8">
-                  <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
-                      <i class="fa fa-search" aria-hidden="true"></i>
+              <form method="GET" class="col-lg-12 offset-3" action="{% url 'gestionarProveedores' 'bus' '-1' %}" name="formBusc" id="formBusc">
+                <div class="col-lg-4 offset-5">
+                  <button class="btn nav_search-btn" class="col-lg-1" name="btnBuscar" id="btnBuscar">
+                    <i class="fa fa-search" aria-hidden="true"></i>
                   </button>
-                </form>
-              </div>
+                  <input type="search"  placeholder="N° del proveedor" class="col-lg-8" name="idBusc" id="idBusc">
+                </div>
+              </form>
+              {% if action == 'bus' %}
+                <div class="col-lg-2 offset-9">
+                  <a class="nav_link" href="{% url 'gestionarProveedores' 'na' '-1' %}">
+                    Volver a ver todos <br> los proveedores
+                  </a>
+                </div>
+              {% endif %}
             </div>
           </div>
         {% endif %}
@@ -38,19 +45,16 @@
             </form>
 
             <div class="row">
-              <div class="col-lg-3 offset-5">
+              <div class="col-lg-2 offset-4">
                 <a class="nav-link" href="{% url 'gestionarProveedores' 'na' '-1' %}">
                   <button class="btn btn-danger">Cancelar</button>
                 </a>
               </div>
-              {% comment %} <div class="col-lg-4 offset-5">
-                <form>
-                  <input type="search"  placeholder="N° del pedido" class="col-lg-8">
-                  <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
-                      <i class="fa fa-search" aria-hidden="true"></i>
-                  </button>
-                </form>
-              </div> {% endcomment %}
+              {% if action == 'upd' %}
+                <div class="col-lg-3">
+                  <button class="btn btn-danger" name="btnMemento" id="btnMemento">Volver objeto al inicio</button>
+                </div>
+              {% endif %}
             </div>
           </div>
         {% endif %}
@@ -106,12 +110,22 @@
   <!-- Sección de Tabla fin -->
 
   <!-- Script para cambiar la clase y que se vea mejor, owo (Hay que ponerle más cosas, pero es la base) -->
-  {% comment %} <script>
+  <script>
 		$(document).ready(function(){
-			document.getElementById("id_idSucursalProveedor").className = "col-lg-6 offset-1";
-			document.getElementById("id_nombreProveedor").className = "col-lg-6 offset-1";
-			document.getElementById("id_correoProveedor").className = "col-lg-6 offset-1";
-			document.getElementById("id_telefonoProveedor").className = "col-lg-6 offset-1";
+      const sucursal = document.getElementById('id_idSucursalProveedor').value;
+      const nombre = document.getElementById('id_nombreProveedor').value;
+      const correo = document.getElementById('id_correoProveedor').value;
+      const telefono = document.getElementById('id_telefonoProveedor').value;
+      $("#btnMemento").click(function(){
+        document.getElementById('id_idSucursalProveedor').value = sucursal;
+        document.getElementById('id_nombreProveedor').value = nombre;
+        document.getElementById('id_correoProveedor').value = correo;
+        document.getElementById('id_telefonoProveedor').value = telefono;
+      })
+			//document.getElementById("id_idSucursalProveedor").className = "col-lg-6 offset-1";
+			//document.getElementById("id_nombreProveedor").className = "col-lg-6 offset-1";
+			//document.getElementById("id_correoProveedor").className = "col-lg-6 offset-1";
+			//document.getElementById("id_telefonoProveedor").className = "col-lg-6 offset-1";
 		})
-	</script> {% endcomment %}
+	</script>
 {% endblock content %}

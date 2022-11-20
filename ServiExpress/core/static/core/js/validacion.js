@@ -89,3 +89,24 @@ $("#formLogin").validate(
         }
     }
 )
+
+$("#formBusc").validate(
+    {
+        "rules":
+        {
+            "idBusc":
+            {
+                required: true,
+                min: 1,
+            }
+        },
+        messages:
+        {
+            "idBusc":
+            {
+                required: "Debe ingresar la ID a buscar",
+                min: "La Id debe ser como mínimo 1"
+            }
+        }
+    }
+)

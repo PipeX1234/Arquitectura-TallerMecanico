@@ -102,6 +102,7 @@ def gestionarProveedores(request, action, id):
         return redirect(index)
 
     data = {"mesg":"", "form":ProveedorForm, "action":action, "id":id}
+    idBusc = 0
 
     if(action == 'ins'):
 
@@ -142,12 +143,27 @@ def gestionarProveedores(request, action, id):
             return redirect(gestionarProveedores, action='na', id = '-1')
         except:
             data["mesg"] = "No se ha podido eliminar, actualice la página y revise si existe o intentelo nuevamente más tarde"
-        
+
     else:
         print("Solo se está listando")
 
-    data["list"] = Proveedor.objects.all().order_by('idProveedor').values('idProveedor','idSucursalProveedor__region', 
-        'idSucursalProveedor__comuna', 'nombreProveedor', 'correoProveedor', 'telefonoProveedor')
+    if(action == 'bus' ):
+        try:
+            idBusc = request.GET.get('idBusc')
+            data["list"] = Proveedor.objects.filter(idProveedor=idBusc).values('idProveedor','idSucursalProveedor__region', 
+            'idSucursalProveedor__comuna', 'nombreProveedor', 'correoProveedor', 'telefonoProveedor', 'idSucursalProveedor')
+            if(data["list"].count() == 0 ):
+                idBusc=0
+                data["mesg"] = "No se ha logrado encontrar el proveedor buscado, revise que exista o reintentelo más tarde."
+        except Exception as err:
+            print(f"Ha ocurrido un error: ",err)
+            idBusc=0
+            data["mesg"] = "No se ha logrado encontrar el proveedor buscado, revise que exista o reintentelo más tarde."
+
+    if(idBusc==0):
+        data["list"] = Proveedor.objects.all().order_by('idProveedor').values('idProveedor','idSucursalProveedor__region', 
+            'idSucursalProveedor__comuna', 'nombreProveedor', 'correoProveedor', 'telefonoProveedor', 'idSucursalProveedor')
+            
     return render(request, 'core/gestionarProveedores.html', data)
 
 def gestionarServicio(request):
