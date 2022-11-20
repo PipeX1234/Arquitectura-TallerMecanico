@@ -112,15 +112,60 @@
   <!-- Script para cambiar la clase y que se vea mejor, owo (Hay que ponerle más cosas, pero es la base) -->
   <script>
 		$(document).ready(function(){
-      const sucursal = document.getElementById('id_idSucursalProveedor').value;
-      const nombre = document.getElementById('id_nombreProveedor').value;
-      const correo = document.getElementById('id_correoProveedor').value;
-      const telefono = document.getElementById('id_telefonoProveedor').value;
+
+      //Se crea un objeto de tipo Proveedor
+      var Proveedor = function (id_idSucursalProveedor, id_nombreProveedor, id_correoProveedor, id_telefonoProveedor) {
+        this.id_idSucursalProveedor = id_idSucursalProveedor;
+        this.id_nombreProveedor = id_nombreProveedor;
+        this.id_correoProveedor = id_correoProveedor;
+        this.id_telefonoProveedor = id_telefonoProveedor;
+      }
+
+      //Sirve para guardar el objeto en Json y luego se pueden volver a buscar cuando sea necesario
+      Proveedor.prototype = {
+        hydrate: function () {
+            var memento = JSON.stringify(this);
+            return memento;
+        },
+    
+        dehydrate: function (memento) {
+            var m = JSON.parse(memento);
+            this.id_idSucursalProveedor = m.id_idSucursalProveedor;
+            this.id_nombreProveedor = m.id_nombreProveedor;
+            this.id_correoProveedor = m.id_correoProveedor;
+            this.id_telefonoProveedor = m.id_telefonoProveedor;
+        }
+      }
+
+      //Es donde se guardan los objetos, no hace cambios, solo los guarda
+      var CareTaker = function () {
+        this.mementos = {};
+    
+        this.add = function (key, memento) {
+            this.mementos[key] = memento;
+        },
+    
+        this.get = function (key) {
+            return this.mementos[key];
+        }
+      }
+
+      //Al momento de cargarse la página, se crea un objeto proveedor y guarda los datos
+      var prov = new Proveedor(document.getElementById('id_idSucursalProveedor').value, document.getElementById('id_nombreProveedor').value, 
+        document.getElementById('id_correoProveedor').value, document.getElementById('id_telefonoProveedor').value);
+      //Se guardan los datos en el caretaker para luego llamarlos
+      var caretaker = new CareTaker();
+      caretaker.add(1, prov.hydrate());
+
+
+      //Acá se llama a memento al presionar el botón
       $("#btnMemento").click(function(){
-        document.getElementById('id_idSucursalProveedor').value = sucursal;
-        document.getElementById('id_nombreProveedor').value = nombre;
-        document.getElementById('id_correoProveedor').value = correo;
-        document.getElementById('id_telefonoProveedor').value = telefono;
+        //Se transforma a un objeto con los datos del inicio
+        prov.dehydrate(caretaker.get(1));
+        document.getElementById('id_idSucursalProveedor').value = prov.id_idSucursalProveedor;
+        document.getElementById('id_nombreProveedor').value = prov.id_nombreProveedor;
+        document.getElementById('id_correoProveedor').value = prov.id_correoProveedor;
+        document.getElementById('id_telefonoProveedor').value = prov.id_telefonoProveedor;
       })
 			//document.getElementById("id_idSucursalProveedor").className = "col-lg-6 offset-1";
 			//document.getElementById("id_nombreProveedor").className = "col-lg-6 offset-1";
