@@ -1,0 +1,101 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+  <!--  Sección de tabla inicio -->
+    <div class="container">
+        <div class="container-xl">
+            <div class="col-sm-6">
+                <h2>Administración de Vehiculos</h2>
+                <br>
+            </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <a class="nav-link" href="gestionarVehiculo.html">
+                {% comment %} <button class="btn btn-success">Agregar Boleta</button> {% endcomment %}
+              </a>
+            </div>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="N° de la Boleta" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th style="text-align: center;">N° Factura</th>
+                <th style="text-align: center;">Fecha</th>
+                <th style="text-align: center;">Nombre Empleado</th>
+                <th style="text-align: center;">Nombre Cliente</th>
+                <th style="text-align: center;">Precio Total</th>
+                <th style="text-align: center;">Detalle</th>
+                <th style="text-align: center;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inicio Boleta -->
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1000</td>
+                    <td style="text-align: center;">21/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$210.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1001</td>
+                    <td style="text-align: center;">24/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$20.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1002</td>
+                    <td style="text-align: center;">28/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$35.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">#1003</td>
+                    <td style="text-align: center;">30/11/2022</td>
+                    <td style="text-align: center;">Mario Perez</td>
+                    <td style="text-align: center;">Martín Arancibia</td>
+                    <td style="text-align: center;">$400.000</td>
+                    <td style="text-align: center;"> <a href="DetallesBoleta" >Ver Detalles</a></td> 
+                    <td style="text-align: center;">
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="editar">Editar</button>
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="btnEliminar" name="btnEliminar" onclick="eliminar()">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Fin Boleta -->
+            </tbody>
+        </table>
+    </div>
+  <!-- Sección de Tabla fin -->
+
+{% endblock content %}
