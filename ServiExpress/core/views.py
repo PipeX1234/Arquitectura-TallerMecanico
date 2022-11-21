@@ -61,6 +61,9 @@ def cerrarSesion(request):
 def servicio(request):
     return render(request, 'core/service.html')
 
+def register(request):
+    return render(request, 'core/register.html')
+
 def acerca(request):
     if request.user.is_superuser:
         return redirect(index)
