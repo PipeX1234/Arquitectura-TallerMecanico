@@ -1,11 +1,14 @@
 
+.login-section{
+    background-image: url("/static/core/images/autobg.png");
+    background-size: cover;
+    padding: 5rem;
+}
 
-.formulario{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-
+.cute-box{
+    width: 20rem;
+    margin: 200px;
+    text-align: center;
 }
 
 .titl{
@@ -17,6 +20,7 @@ label[for="id_username"]{
     margin-right: 38px;
     margin-top: 20px;
     margin-left: 10px;
+    text-align: start;
 }
 
 input[id="id_username"]{
@@ -34,6 +38,7 @@ label[for="id_password"]{
     margin-right: 5px;
     margin-top: 20px;
     margin-left: 10px;
+    text-align: start;
 }
 
 input[id="id_password"]{

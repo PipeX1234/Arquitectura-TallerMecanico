@@ -4,30 +4,27 @@
 {% block content %}
   <section>
     <div class="container">
-      <div>
-        <img src="{% static 'core/images/autobg.png' %}" style="width: 100%">
-    </div>
-    <div class="formulario">
-      <div class="card p-3">
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item"><h3 class="titl">Inicio de sesión</h3></li>
-          <li class="list-group-item">
-            <form method="POST" action="" enctype="multipart/form-data" id="formLogin" name="formLogin">
-              {% csrf_token %} {{ form.as_p }}
-              <input type="submit" value="Iniciar">
-          </form>
-          {% if mesg %}
-            <div class="col-lg-6 offset-3 bg-info text-white p-3 mb-2" style="text-align: center;">
-              {{mesg}}
-            </div>
-          {% endif %}
-          </li>
-          <li class="list-group-item">
-            <div class="titl"><a href="#">Recuperar contraseña<a/></div>
-          </li>
-        </ul>
+      <div class="login-section">
+        <div class="card cute-box">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h3>Inicio de sesión</h3></li>
+            <li class="list-group-item">
+              <form method="POST" action="" enctype="multipart/form-data" id="formLogin" name="formLogin">
+                {% csrf_token %} {{ form.as_p }}
+                <input type="submit" value="Iniciar">
+            </form>
+            {% if mesg %}
+              <div class="col-lg-6 offset-3 bg-info text-white p-3 mb-2" style="text-align: center;">
+                {{mesg}}
+              </div>
+            {% endif %}
+            </li>
+            <li class="list-group-item">
+              <div><a href="#">Recuperar contraseña<a/></div>
+            </li>
+          </ul>
+        </div>
       </div>
-    </div>
     </div>
   </section>
 {% endblock content %}
