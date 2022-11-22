@@ -1,0 +1,96 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block content %}
+
+  <!--  Sección de tabla inicio -->
+    <div class="container">
+        <div class="container-xl">
+            <div class="col-sm-6">
+                <h2>Administración de Vehiculos</h2>
+                <br>
+            </div>
+        </div>
+
+
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <a class="nav-link" href="gestionarVehiculo.html">
+                {% comment %} <button class="btn btn-success">Agregar Boleta</button> {% endcomment %}
+              </a>
+            </div>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="Rut cliente" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th style="text-align: center;">Rut cliente</th>
+                <th style="text-align: center;">Patente</th>
+                <th style="text-align: center;">Marca</th>
+                <th style="text-align: center;">Modelo</th>
+                <th style="text-align: center;">Año</th>
+                <th style="text-align: center;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inicio Boleta -->
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-9</td>
+                    <td style="text-align: center;">FUYZ59</td>
+                    <td style="text-align: center;">Renault</td>
+                    <td style="text-align: center;">Arkana</td>
+                    <td style="text-align: center;">2019</td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-k</td>
+                    <td style="text-align: center;">ACGE31</td>
+                    <td style="text-align: center;">Suzuki</td>
+                    <td style="text-align: center;">Vitara</td>
+                    <td style="text-align: center;">2015</td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-4</td>
+                    <td style="text-align: center;">TIWN23</td>
+                    <td style="text-align: center;">SsangYong</td>
+                    <td style="text-align: center;">Tivoli</td>
+                    <td style="text-align: center;">2018</td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-1</td>
+                    <td style="text-align: center;">SXZO78</td>
+                    <td style="text-align: center;">Chevrolet</td>
+                    <td style="text-align: center;">Corvette</td>
+                    <td style="text-align: center;">2014</td> 
+                    <td style="text-align: center;">
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="editar">Editar</button>
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="btnEliminar" name="btnEliminar" onclick="eliminar()">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Fin Boleta -->
+            </tbody>
+        </table>
+    </div>
+  <!-- Sección de Tabla fin -->
+
+{% endblock content %}

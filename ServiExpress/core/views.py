@@ -61,6 +61,9 @@ def cerrarSesion(request):
 def servicio(request):
     return render(request, 'core/service.html')
 
+def register(request):
+    return render(request, 'core/register.html')
+
 def acerca(request):
     if request.user.is_superuser:
         return redirect(index)
@@ -96,6 +99,11 @@ def gestionarOrdenesPedido(request):
     if not request.user.is_authenticated or not request.user.is_staff:
         return redirect(index)
     return render(request, 'core/gestionarOrdenesPedido.html')
+
+def gestionarVehiculo(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
+    return render(request, 'core/gestionarVehiculo.html')
 
 def gestionarProveedores(request, action, id):
     if not request.user.is_authenticated or not request.user.is_superuser:
