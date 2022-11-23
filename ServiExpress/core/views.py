@@ -64,6 +64,9 @@ def servicio(request):
 def register(request):
     return render(request, 'core/register.html')
 
+def perfil(request):
+    return render(request, 'core/perfil.html')
+
 def acerca(request):
     if request.user.is_superuser:
         return redirect(index)
@@ -104,6 +107,11 @@ def gestionarVehiculo(request):
     if not request.user.is_authenticated:
         return redirect(index)
     return render(request, 'core/gestionarVehiculo.html')
+
+def gestionarReserva(request):
+    if not request.user.is_authenticated:
+        return redirect(index)
+    return render(request, 'core/reservarHora.html')
 
 def gestionarProveedores(request, action, id):
     if not request.user.is_authenticated or not request.user.is_superuser:

@@ -4,148 +4,150 @@
 {% block content %}
   <!--  Sección de tabla inicio -->
     <div class="container">
-        <div class="container-xl">
-            <div class="col-sm-6">
-                <h2>Reservar Hora</h2>
-                <br>
-            </div>
-        </div>
-        <!-- Inicio Formulario Orden de pedido -->
-        <div class="container">
-          <div class="col-lg-8 offset-2">
-            <!--  -->
-            <form >
-              <div class="form-group">
-                <div class="card">
-                  <div class="col-lg-12" style="padding: 20px;">
+      <div class="container-xl">
+          <div class="col-sm-6">
+              <h2>Reservar Hora</h2>
+              <br>
+          </div>
+      </div>
+      <!-- Inicio Formulario Orden de pedido -->
+      <div class="container">
+        <div class="col-lg-8 offset-2">
+          <!--  -->
+          <form >
+            <div class="form-group">
+              <div class="card">
+                <div class="col-lg-12" style="padding: 20px;">
 
-                    <div class="row">
-                      <div class="col-lg-4">
-                        Nombres del Cliente
-                      </div>
-                      <div class="col-lg-8">
-                        <input class="col-lg-5" readonly value="Mario"/>
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Nombres del Cliente
                     </div>
-
-                    <hr>
-
-                    <div class="row">
-                      <div class="col-lg-4">
-                        Apellido Paterno
-                      </div>
-                      <div class="col-lg-8">
-                        <input class="col-lg-5" readonly value="Hernandez"/>
-                      </div>
+                    <div class="col-lg-8">
+                      <input class="col-lg-5" readonly value="Mario"/>
                     </div>
+                  </div>
 
-                    <hr>
+                  <hr>
 
-                    <div class="row">
-                      <div class="col-lg-4">
-                        Apellido Materno
-                      </div>
-                      <div class="col-lg-8">
-                        <input class="col-lg-5" readonly value="Leiva"/>
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Apellido Paterno
                     </div>
-
-                    <hr>
-
-                    <div class="row">
-                      <div class="col-lg-4"> <p class="mb-0">Rut Cliente</p> </div>
-                      <div class="col-lg-8">
-                        <input type="number"  value="18459686" readonly/>
-                        - <input class="col-lg-2" readonly value="k"/>
-                      </div>
-                      
+                    <div class="col-lg-8">
+                      <input class="col-lg-5" readonly value="Hernandez"/>
                     </div>
+                  </div>
 
-                    <hr>
+                  <hr>
 
-                    <div class="row">
-                      <div class="col-lg-4"> <p class="mb-0">Número Telefónico</p> </div>
-                      <div class="col-lg-8">
-                        <input type="number" value="956871597"/>
-                      </div>
-                      
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Apellido Materno
                     </div>
-
-                    <hr>
-
-                    <hr>
-
-                    <div class="row">
-                      <div class="col-lg-4">
-                        Marca Vehículo
-                      </div>
-                      <div class="col-lg-8">
-                        <input class="col-lg-5"/>
-                      </div>
+                    <div class="col-lg-8">
+                      <input class="col-lg-5" readonly value="Leiva"/>
                     </div>
+                  </div>
 
-                    <hr>
+                  <hr>
 
-                    <div class="row">
-                      <div class="col-lg-4">
-                        Color Vehículo
-                      </div>
-                      <div class="col-lg-8">
-                        <input class="col-lg-5"/>
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-4"> <p class="mb-0">Rut Cliente</p> </div>
+                    <div class="col-lg-8">
+                      <input type="number"  value="18459686" readonly/>
+                      - <input class="col-lg-2" readonly value="k"/>
                     </div>
+                    
+                  </div>
 
-                    <hr>
+                  <hr>
 
-                    <div class="row">
-                      <div class="col-lg-4"> <p class="mb-0">Año Automovil</p> </div>
-                      <div class="col-lg-8">
-                        <input type="number"  />
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-4"> <p class="mb-0">Número Telefónico</p> </div>
+                    <div class="col-lg-8">
+                      <input type="number" value="956871597"/>
                     </div>
+                    
+                  </div>
 
-                    <hr>
+                  <hr>
 
-                    <div class="row">
-                      <div class="col-lg-4"> <p class="mb-0">Fecha de la Reserva</p> </div>
-                      <div class="col-lg-8">
-                        <input type="date"  />
-                      </div>
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Marca Vehículo
                     </div>
-
-                    <hr>
-
-                    <div class="row">
-                      <div class="col-lg-4">
-                        <label for="proveedorPedido">Hora de la Reserva</label>
-                      </div>
-                      <div class="col-lg-8">
-                        <select name="proveedorPedido" id="proveedorPedido" style="width: 44%;">
-                          <option value="1">16:30</option>
-                          <option value="2">17:30</option>
-                          <option value="3">18:30</option>
-                          <option value="4">19:30</option>
-                        </select>
-                      </div>
+                    <div class="col-lg-8">
+                      <input class="col-lg-5"/>
                     </div>
+                  </div>
 
-                    <hr>
+                  <hr>
 
-                    <div class="col-lg-1 offset-5">
-                      <div class="" style="align-content:space-between;">
-                        <button type="SUBMIT" class="btn btn-success">
-                          Reservar
-                        </button>
-                      </div>
+                  <div class="row">
+                    <div class="col-lg-4">
+                      Color Vehículo
+                    </div>
+                    <div class="col-lg-8">
+                      <input class="col-lg-5"/>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-lg-4"> <p class="mb-0">Año Automovil</p> </div>
+                    <div class="col-lg-8">
+                      <input type="number"  />
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-lg-4"> <p class="mb-0">Fecha de la Reserva</p> </div>
+                    <div class="col-lg-8">
+                      <input type="date"  />
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="row">
+                    <div class="col-lg-4">
+                      <label for="proveedorPedido">Hora de la Reserva</label>
+                    </div>
+                    <div class="col-lg-8">
+                      <select name="proveedorPedido" id="proveedorPedido" style="width: 44%;">
+                        <option value="1">16:30</option>
+                        <option value="2">17:30</option>
+                        <option value="3">18:30</option>
+                        <option value="4">19:30</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <hr>
+
+                  <div class="col-lg-1 offset-5">
+                    <div class="" style="align-content:space-between;">
+                      <button type="SUBMIT" class="btn btn-success">
+                        Reservar
+                      </button>
                     </div>
                   </div>
                 </div>
               </div>
-            </form>
-            <!--  -->
-          </div>
+            </div>
+          </form>
+          <!--  -->
         </div>
-        <!-- Fin Formulario Orden de Pedido -->
+      </div>
+
+    </div>
+    <!-- Fin Formulario Orden de Pedido -->
           
 
         

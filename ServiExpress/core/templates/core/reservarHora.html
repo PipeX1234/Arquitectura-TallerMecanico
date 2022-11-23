@@ -1,210 +1,148 @@
-<!DOCTYPE html>
-<html>
+{% extends 'core/base.html' %}
+{% load static %}
 
-<head>
-  <!-- Basic -->
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <!-- Mobile Metas -->
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <!-- Site Metas -->
-  <link rel="icon" href="images/fevicon.png" type="image/gif" />
-  <meta name="keywords" content="" />
-  <meta name="description" content="" />
-  <meta name="author" content="" />
-
-  <title>SERVIEXPRESS</title>
-
-
-  <!-- bootstrap core css -->
-  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
-
-  <!-- fonts style -->
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
-
-  <!-- font awesome style -->
-  <link href="css/font-awesome.min.css" rel="stylesheet" />
-
-  <!-- Custom styles for this template -->
-  <link href="css/style.css" rel="stylesheet" />
-  <!-- responsive style -->
-  <link href="css/responsive.css" rel="stylesheet" />
-
-</head>
-
+{% block content %}
 <body>
 
-  <!-- header section strats -->
-  <header class="header_section">
-    <div class="container-fluid">
-      <nav class="navbar navbar-expand-lg custom_nav-container ">
-        <a class="navbar-brand" href="index.html">
-          <span>ServiExpress</span>
-        </a>
-
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class=""> </span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav  ml-auto">
-            <li class="nav-item ">
-              <a class="nav-link" href="index.html">Inicio </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gestionarBoleta.html"> Gestionar <br> Boletas</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gestionarOrdenesPedido.html">Gestionar Ordenes <br> De Pedido</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gestionarServicios.html">Gestionar <br> Servicios</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="gestionarEmpleado.html">Gestionar <br> Empleados</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="gestionarProveedores.html">Gestionar <br> Proveedores</a>
-            
-            </li>
-            <!-- <li class="nav-item active">
-              <a class="nav-link" href="index.html">Mi Perfil <span class="sr-only">(current)</span> </a>
-            </li> -->
-            <li class="nav-item">
-              <a class="nav-link" href="indexAnon.html">Cerrar Sesión</a>
-            </li>
-          </ul>
-        </div>
-      </nav>
-    </div>
-  </header>
-  <hr>
-  <!-- end header section -->
-
   <!--  Sección de tabla inicio -->
-    <div class="container">
-      <div class="heading_container heading_center">
-        <h2>Reservas Hora</h2>
-        <br>
-      </div>
-      <div class="container-xl">
-        <form> 
-            Nombres del Cliente: <input/> 
-        </form>
-          <br>
-        <form> 
-            Apellido Paterno: <input/>
-            Apellido Materno: <input/> <br>
-        </form>
-          <br>
-        <form> 
-            Rut Cliente: <input/> 
-            Número Telefónico: <input/><br>
-        </form><br>
-        
-        <form> 
-            Marca Vehículo: <input/>  
-            Color Vehículo: <input/>    
-        </form>
-        <br>
-        <form> 
-            Año Vehículo: <input/> 
-        </form>
-      </div>
-          
+  <section>
+      <div class="container">
+        {% if user.is_authenticated and user.is_superuser %}
         <div class="container">
+          <div class="container-xl">
+            <div class="col-sm-6">
+                <h2>Administración de Reservas</h2>
+                <br>
+            </div>
           <div class="row">
             <div class="col-lg-3">
-              <a >
-                <button class="btn btn-success">Reservar hora</button>
+              <a class="nav-link" href="gestionarVehiculo.html">
+                {% comment %} <button class="btn btn-success">Agregar Boleta</button> {% endcomment %}
               </a>
             </div>
-          </div>
-        </div>
-    </div>
-        
-  <!-- Sección de Tabla fin -->
-
-  <!-- info section -->
-
-  <section class="info_section ">
-    <div class="info_container ">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-9">
-            <div class="info_contact ">
-              <div class="row">
-                <!-- <div class="col-md-3">
-                  <a href="#" class="link-box">
-                    <i class="fa fa-map-marker" aria-hidden="true"></i>
-                    <span>
-                      Location
-                    </span>
-                  </a>
-                </div> -->
-                <div class="col-md-5">
-                  <a href="#" class="link-box">
-                    <i class="fa fa-phone" aria-hidden="true"></i>
-                    <span>
-                      Llama : +569 5551 6548
-                    </span>
-                  </a>
-                </div>
-                <div class="col-md-4">
-                  <a href="#" class="link-box">
-                    <i class="fa fa-envelope" aria-hidden="true"></i>
-                    <span>
-                      ServiExpress@gmail.com
-                    </span>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-5  col-lg-3 mx-auto">
-            <div class="info_form ">
-              <form action="#">
-                <input type="email" placeholder="Enter Your Email" />
-                <button>
-                  <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="Rut cliente" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
                 </button>
               </form>
             </div>
           </div>
         </div>
-        <div class="info_logo">
-          <a class="navbar-brand" href="index.html">
-            <span>
-              SERVIEXPRESS
-            </span>
-          </a>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th style="text-align: center;">Rut Cliente</th>
+                <th style="text-align: center;">Fecha</th>
+                <th style="text-align: center;">Hora</th>
+                <th style="text-align: center;">Estado</th>
+                <th style="text-align: center;">Precio</th>
+                <th style="text-align: center;">Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inicio Boleta -->
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-9</td>
+                    <td style="text-align: center;">11/03/2023</td>
+                    <td style="text-align: center;">11:00 AM</td>
+                    <td style="text-align: center;">Cancelado</td>
+                    <td style="text-align: center;">$50.000</td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-k</td>
+                    <td style="text-align: center;">16/04/2023</td>
+                    <td style="text-align: center;">10:00 AM</td>
+                    <td style="text-align: center;">Pendiente</td>
+                    <td style="text-align: center;">-</td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-4</td>
+                    <td style="text-align: center;">22/05/2023</td>
+                    <td style="text-align: center;">12:00 PM</td>
+                    <td style="text-align: center;">Cancelado</td>
+                    <td style="text-align: center;">$135.000</td> 
+                    <td style="text-align: center;">
+                        <a href="gestionarBoleta.html" class="btn btn-link">Editar</button>
+                        <a href="gestionarBoleta.html" class="btn btn-link">Eliminar</button>
+                    </td>
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-1</td>
+                    <td style="text-align: center;">27/07/2023</td>
+                    <td style="text-align: center;">14:00 PM</td>
+                    <td style="text-align: center;">Pendiente</td>
+                    <td style="text-align: center;">-</td> 
+                    <td style="text-align: center;">
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="editar">Editar</button>
+                        <button href="gestionarBoleta.html" class="btn btn-link" id="btnEliminar" name="btnEliminar" onclick="eliminar()">Eliminar</button>
+                    </td>
+                </tr>
+                <!-- Fin Boleta -->
+            </tbody>
+        </table>
+        {% endif%}
+        {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
+        <div class="container">
+          <div class="container-xl">
+            <div class="col-sm-6">
+                <h2>Mis reservas</h2>
+                <br>
+            </div>
+          <div class="row">
+            <div class="col-lg-3">
+              <a class="nav-link" href="gestionarVehiculo.html">
+                {% comment %} <button class="btn btn-success">Agregar Boleta</button> {% endcomment %}
+              </a>
+            </div>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="Rut" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
-        <div class="social-box">
-          <a href="">
-            <i class="fa fa-facebook" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-twitter" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-instagram" aria-hidden="true"></i>
-          </a>
-          <a href="">
-            <i class="fa fa-youtube" aria-hidden="true"></i>
-          </a>
-        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th style="text-align: center;">Rut Cliente</th>
+                <th style="text-align: center;">Fecha</th>
+                <th style="text-align: center;">Hora</th>
+                <th style="text-align: center;">Estado</th>
+                <th style="text-align: center;">Precio</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inicio Boleta -->
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-9</td>
+                    <td style="text-align: center;">11/03/2023</td>
+                    <td style="text-align: center;">11:00 AM</td>
+                    <td style="text-align: center;">Cancelado</td>
+                    <td style="text-align: center;">$50.000</td> 
+                </tr>
+                <!-- Fin Boleta -->
+            </tbody>
+        </table>
+        {% endif%}
       </div>
     </div>
   </section>
-
-  <!-- jQery -->
-  <script src="js/jquery-3.4.1.min.js"></script>
-  <!-- bootstrap js -->
-  <script src="js/bootstrap.js"></script>
-  <!-- custom js -->
-  <script src="js/custom.js"></script>
-
+  <!-- Sección de Tabla fin -->
 
 </body>
-
-</html>
+{% endblock content %}

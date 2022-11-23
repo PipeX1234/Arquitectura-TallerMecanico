@@ -10,8 +10,64 @@
                 <br>
             </div>
         </div>
+        {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3">
+              <a class="nav-link" href="gestionarVehiculo.html">
+                {% comment %} <button class="btn btn-success">Agregar Boleta</button> {% endcomment %}
+              </a>
+            </div>
+            <div class="col-lg-4 offset-5">
+              <form>
+                <input type="search"  placeholder="Patente" class="col-lg-8">
+                <button class="btn   nav_search-btn" type="submit" class="col-lg-1">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+              </form>
+            </div>
+          </div>
+        </div>
+        <br>
+        <table class="table table-hover">
+            <thead>
+                <tr>
+                <th style="text-align: center;">Rut</th>
+                <th style="text-align: center;">Patente</th>
+                <th style="text-align: center;">Marca</th>
+                <th style="text-align: center;">Modelo</th>
+                <th style="text-align: center;">Año</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Inicio Boleta -->
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-9</td>
+                    <td style="text-align: center;">FUYZ59</td>
+                    <td style="text-align: center;">Renault</td>
+                    <td style="text-align: center;">Arkana</td>
+                    <td style="text-align: center;">2019</td> 
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-k</td>
+                    <td style="text-align: center;">ACGE31</td>
+                    <td style="text-align: center;">Suzuki</td>
+                    <td style="text-align: center;">Vitara</td>
+                    <td style="text-align: center;">2015</td> 
+                </tr>
+                <tr style="vertical-align: middle;">
+                    <td style="text-align: center;">12.456.783-4</td>
+                    <td style="text-align: center;">TIWN23</td>
+                    <td style="text-align: center;">SsangYong</td>
+                    <td style="text-align: center;">Tivoli</td>
+                    <td style="text-align: center;">2018</td> 
+                </tr>
+                <!-- Fin Boleta -->
+            </tbody>
+        </table>
+        {% endif%}
 
-
+        {% if user.is_authenticated and user.is_superuser %}
         <div class="container">
           <div class="row">
             <div class="col-lg-3">
@@ -90,6 +146,8 @@
                 <!-- Fin Boleta -->
             </tbody>
         </table>
+        {% endif%}
+
     </div>
   <!-- Sección de Tabla fin -->
 

@@ -1,14 +1,7 @@
-<!DOCTYPE html>
-<html lang="es">
+{% extends 'core/base.html' %}
+{% load static %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MI Perfil</title>
-    <link rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous" />
-
-</head>
+{% block content %}
 
 <body>
 
@@ -190,36 +183,73 @@ Copiar esto
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada">
                 <div class="perfil-usuario-avatar">
-                    <img src="images/s1.png" alt="img-avatar">
+                    {% if user.is_authenticated and user.is_staff and not user.is_superuser %}
+                    <img src="{% static '/core/images/meca.jpg' %}" alt="img-avatar">
+                    {% endif%}
+                    {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
+                    <img src="{% static '/core/images/client.jpg' %}" alt="img-avatar">
+                    {% endif%}
                     <button type="button" class="boton-avatar">
-                        <i class="far fa-image"></i>
+                        <i class="fa fa-image"></i>
                     </button>
                 </div>
  
             </div>
         </div>
-        <div class="perfil-usuario-body">
+        {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
+        <div class="perfil-usuario-body mb-3">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">Juan Pedro</h3>
-                <p class="texto">Datos de Mi Perfil</p>
+                <h3 class="titulo">Martín Perez</h3>
+                <p class="texto">Datos de mi cuenta</p>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fa fa-user"></i> Nombre y apellido:</li>
-                    <li><i class="icono fas fa-phone-alt"></i> Telefono:</li>
-                    <li><i class="icono fas fa-calendar-alt"></i> Edad</li>
+                    <li><i class="icono fa fa-user"></i> Nombre completo: Martín Perez Saavedra</li>
+                    <li><i class="icono fa fa-phone"></i> Teléfono: +56912345678</li>
+                    <li><i class="icono fa fa-calendar"></i> Edad: 36</li>
                 </ul>
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-map-marker-alt"></i> Direccion.</li>
-                    <li><i class="icono fa fa-envelope-square"></i> Correo.</li>
-                    <li><i class="icono fas fa-briefcase"></i> Trabaja en ServiExpress.</li>
-
-
-
-
+                    <li><i class="icono fa fa-id-card"></i> Rut: 14.365.959-k</li>
+                    <li><i class="icono fa fa-map-marker"></i> Dirección: El bosque, pasaje 5, A123</li>
+                    <li><i class="icono fa fa-envelope"></i> Correo: ma.perez36@gmail.com</li>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <li><i class="icono fa fa-briefcase"></i> Trabaja en ServiExpress.</li>
+                    {% endif%}
                 </ul>
+                <div>
+                    <a class="btn btn-primary" href="{% url 'gestionarVehiculo' %}">Ver mis vehiculos<a/>
+                    <a class="btn btn-primary" href="#">Editar mis datos<a/>
+                    <a class="btn btn-primary" href="{% url 'gestionarReserva' %}">Ver mis horas<a/>
+                </div>
             </div>
         </div>
+        {% endif%}
+        {% if user.is_authenticated and user.is_staff and not user.is_superuser %}
+        <div class="perfil-usuario-body mb-3">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">Lucas Contreras</h3>
+                <p class="texto">Datos de mi cuenta</p>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class="icono fa fa-user"></i> Nombre completo: Lucas Contreras Soto</li>
+                    <li><i class="icono fa fa-phone"></i> Teléfono: +56912345325</li>
+                    <li><i class="icono fa fa-calendar"></i> Edad: 41</li>
+                </ul>
+                <ul class="lista-datos">
+                    <li><i class="icono fa fa-id-card"></i> Rut: 14.365.737-2</li>
+                    <li><i class="icono fa fa-map-marker"></i> Dirección: Chiloe, 1657, Santiago</li>
+                    <li><i class="icono fa fa-envelope"></i> Correo: lu.contreras41@gmail.com</li>
+                    {% if user.is_authenticated and user.is_staff %}
+                    <li><i class="icono fa fa-briefcase"></i> Trabaja en ServiExpress.</li>
+                    {% endif%}
+                </ul>
+                <div>
+                    <a class="btn btn-primary" href="#">Editar mis datos<a/>
+                </div>
+            </div>
+        </div>
+        {% endif%}
     </section>
     <!--====  End of html  ====-->
 
@@ -235,6 +265,5 @@ Copiar esto
 }
 </style>
 </div>
-</body>
 
-</html>
+{% endblock content %}
