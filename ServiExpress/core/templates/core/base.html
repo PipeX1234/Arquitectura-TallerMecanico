@@ -66,20 +66,36 @@
                 <li class="nav-item active">
                   <a class="nav-link" href="{% url 'reservarHora' %}">Reservar Hora </a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'servicio' %}">Servicios</a>
+                </li>
+                {% if user.is_superuser %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gestionarVehiculo' %}">Gestionar <br> Vehiculos</a>
+                  </li>
+                {% elif user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gestionarVehiculo' %}">Mis Vehiculos</a>
+                  </li>
+                {% endif %}
               {% endif%}
               {% if not user.is_staff or not user.is_superuser %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'acerca' %}">Nosotros</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'servicio' %}">Servicios</a>
-                </li>
+                {% if not user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'servicio' %}">Servicios</a>
+                  </li>
+                {% endif %}
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'why' %}">porque elegirnos</a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{% url 'gestionarVehiculo' %}">Mis vehiculos</a>
-                </li>
+                {% if not user.is_authenticated %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'gestionarVehiculo' %}">Mis vehiculos</a>
+                  </li>
+                {% endif %}
               {% endif %}
               {% if user.is_authenticated and not user.is_staff and not user.is_superuser %}
               <li class="nav-item">
@@ -111,9 +127,6 @@
                 </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'gestionarVehiculo' %}">Gestionar <br> Vehiculos</a>
-                </li>
-                <li class="nav-item active">
-                  <a class="nav-link" href="{% url 'gestionarReserva' %}">Gestionar Reservas</a>
                 </li>
               {% endif %}
               {%if user.is_authenticated%}
